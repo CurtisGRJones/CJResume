@@ -1,0 +1,14 @@
+.page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 90vw;
+}

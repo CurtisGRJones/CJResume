@@ -1,0 +1,12 @@
+.button {
+    background-color: black;
+    margin: auto;
+    text-align: center;
+    margin: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.button:hover {
+    color: yellow;
+}
