@@ -1,6 +1,8 @@
-import { Template } from './pages/template/Template';
 import { useEffect, useState } from 'react';
 import { ConfigControler } from './controlers/ConfigControler';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Layout } from './components';
+import { Home, Page404, Calculator } from './pages';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -13,6 +15,7 @@ function App() {
   useEffect(() => {
     const getConfig = async () => {
       setConfig(await configControler.getConfig())
+      console.log(config)
     }
 
     getConfig().catch((e) => {
@@ -21,7 +24,22 @@ function App() {
     
   }, [])
   return (
-    <Template config={config} />
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/calculator" element={<Calculator />} />
+        {
+          /*
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+          */
+        }
+        <Route path="*" element={<Page404 />} />
+      </Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 

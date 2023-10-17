@@ -1,0 +1,100 @@
+.cover {
+    background:rgba(128,128,128, 0.5);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.spinner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: black;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.spinner { 
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 100px;
+    height: 100px;
+    animation: spinner 1.2s infinite;
+}
+
+.sand {
+    background-color: #f2d2a9;
+    position: absolute;
+    width: 100px;
+}
+
+.sand.top {
+    left: 0px;
+    top: 50px;
+    height: 50px;
+    animation: drain 1.2s infinite;
+}
+
+.sand.bottom {
+    height: 0px;
+    animation: fill 1.2s infinite;
+}
+
+.hourglass {
+    height:0;
+    width: 0;
+    position: absolute;
+    border: 50px solid #ffffff;
+    border-color: #ffffff transparent;
+}
+
+.sand.hourglass {
+    background-color: transparent;
+    border-color: transparent black transparent black;
+}
+
+
+@keyframes spinner {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    25% {
+      transform: rotate(90deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes drain {
+    0% {
+        height: 50px;
+    }
+    50% {
+        height: 50px;
+    }
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes fill {
+    0% {
+        height: 0px;
+    }
+    50% {
+        height: 0px;
+    }
+    100% {
+        height: 50px;
+    }
+}

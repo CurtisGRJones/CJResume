@@ -1,4 +1,4 @@
-.button {
+.btn-content-wrapper {
     background-color: black;
     margin: auto;
     text-align: center;
@@ -7,6 +7,21 @@
     border-radius: 10px;
 }
 
+.button:visited {
+    color: whitesmoke;
+    text-decoration: none; 
+}
+
+.button:link {
+    color: whitesmoke;
+    text-decoration: none; 
+}
+
 .button:hover {
     color: yellow;
+    text-decoration: none;
 }
+
+.button:hover { text-decoration: none; }
+
+.button:active { text-decoration: none; }

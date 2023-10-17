@@ -2,13 +2,13 @@ import './button.css'
 
 export const Button = ({
     textContent,
-    onClick
+    href
 }: any) => {
     return (
-        <>
-            <div className='button'>
+        <a href={href} className='button'>
+            <div className='btn-content-wrapper'>
                 <span> {textContent} </span>
             </div>
-        </>
+        </a>
     );
 }
