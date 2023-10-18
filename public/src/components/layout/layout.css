@@ -9,5 +9,6 @@
 .content {
     min-height: 100vh;
     min-width: 100vw;
-    margin-left: var(--menubar-width);
+    margin-left: calc(var(--menubar-width) + 1rem);
+    margin-top: 1rem;
 }

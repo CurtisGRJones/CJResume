@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button } from '@mui/material'
+import { Button, Grid } from '@mui/material'
 import { Local } from './local'
 import { Remote } from './remote'
 import './adcSim.css'
@@ -30,10 +30,21 @@ export const AdcSim = () => {
                             )
                         default:
                             return (
-                                <>
-                                    <Button className='selectButton' variant="contained" onClick={setTypeLocal}>Local</Button>
-                                    <Button className='selectButton' variant="contained" onClick={setTypeRemote}>Remote</Button>
-                                </>
+                                <Grid
+                                    container
+                                    spacing={0}
+                                    direction="column"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    style={{ minHeight: '100vh' }}
+                                >
+                                    <Grid item xs={1}>
+                                        <Button variant="contained" onClick={setTypeLocal}>Local</Button>
+                                    </Grid>
+                                    <Grid item xs={1}>
+                                        <Button sx={{ m: '0.5rem' }} variant="contained" onClick={setTypeRemote}>Remote</Button>
+                                    </Grid>
+                                </Grid>
                             )
                     }
                 })()

@@ -1,11 +1,11 @@
 :root {
-  --primary-background-colour: #1e90ff;
-  --secondary-background-colour: #ffffff;
-  --tertiary-background-colour: #000000;
+  --primary-background-color: #1e90ff;
+  --secondary-background-color: #ffffff;
+  --tertiary-background-color: #000000;
 
   --primary-text-color: #ff1e1e;
-  --secondary-text-colour: #000000;
-  --tertiary-text-colour: #ffffff;
+  --secondary-text-color: #000000;
+  --tertiary-text-color: #ffffff;
 
   --menubar-width: 10vw;
 }
