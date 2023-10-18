@@ -1,3 +1,7 @@
+:root {
+    --spinner-time: 2s;
+}
+
 .cover {
     background:rgba(128,128,128, 0.5);
     position: fixed;
@@ -11,6 +15,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-75px, -75px);
     background: black;
     height: 150px;
     width: 150px;
@@ -23,7 +28,7 @@
     left: 25px;
     width: 100px;
     height: 100px;
-    animation: spinner 1.2s infinite;
+    animation: spinner var(--spinner-time) infinite;
 }
 
 .sand {
@@ -36,12 +41,12 @@
     left: 0px;
     top: 50px;
     height: 50px;
-    animation: drain 1.2s infinite;
+    animation: drain var(--spinner-time) infinite;
 }
 
 .sand.bottom {
     height: 0px;
-    animation: fill 1.2s infinite;
+    animation: fill var(--spinner-time) infinite;
 }
 
 .hourglass {
@@ -63,11 +68,11 @@
       transform: rotate(0);
       animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
-    25% {
+    20% {
       transform: rotate(90deg);
       animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     }
-    50% {
+    40% {
       transform: rotate(180deg);
     }
     100% {
@@ -79,7 +84,7 @@
     0% {
         height: 50px;
     }
-    50% {
+    40% {
         height: 50px;
     }
     100% {
@@ -91,7 +96,7 @@
     0% {
         height: 0px;
     }
-    50% {
+    40% {
         height: 0px;
     }
     100% {

@@ -35,6 +35,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/calculator" element={<Calculator />} />
             <Route path='/adcSim' element={<AdcSim />} />
+            <Route path='/spinner' element={<Spinner />} />
             <Route path="*" element={<Page404 />} />
           </Route>
         </Routes>
