@@ -1,4 +1,3 @@
-import { Spinner } from '../../components';
 import './home.css'
 
 export const Home = () => {

@@ -1,13 +1,19 @@
 import { AnchorButton } from '../anchorButton'
+import { Logo } from '../logo';
 import './menuBar.css'
 
 export const MenuBar = () => {
     return (
         <div className="menu-bar">
-            <AnchorButton textContent='HOME' href='/' />
-            <AnchorButton textContent='RESUME' href='/resume' />
-            <AnchorButton textContent='CALCULATOR' href='/calculator' />
-            <AnchorButton textContent='ADCSIM' href='/adcSim' />
+            <div className='logo'>
+                <Logo width={120} />
+            </div>
+            <div className='navigation'>
+                <AnchorButton textContent='HOME' href='/' />
+                <AnchorButton textContent='RESUME' href='/resume' />
+                <AnchorButton textContent='CALCULATOR' href='/calculator' />
+                <AnchorButton textContent='ADCSIM' href='/adcSim' />
+            </div>
         </div>
     );
 }

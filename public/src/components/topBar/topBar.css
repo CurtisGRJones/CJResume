@@ -1,0 +1,5 @@
+.top-bar{
+    background-color: var(--secondary-background-color);
+    min-width: calc(100% - var(--menubar-width));
+    height: 100px;
+}

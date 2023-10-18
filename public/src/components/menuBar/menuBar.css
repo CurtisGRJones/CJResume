@@ -3,5 +3,20 @@
     height: 100vh;
     width: var(--menubar-width);
     background-color: var(--secondary-background-color);
+    z-index: var(--z-top);
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo {
+    --logo-spacing: calc((var(--menubar-width) / 2) - (120px / 2));
+    position: relative;
+    width: 120;
+    top: var(--logo-spacing);
+    left: var(--logo-spacing);
 }
 
