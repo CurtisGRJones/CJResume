@@ -1,10 +1,10 @@
-import { Button } from './button/button'
-import { Layout } from './layout/layout'
-import { MenuBar } from './menuBar/menuBar'
-import { Spinner } from './spinner/spinner'
+import { AnchorButton } from './anchorButton'
+import { Layout } from './layout'
+import { MenuBar } from './menuBar'
+import { Spinner } from './spinner'
 
 export {
-    Button,
+    AnchorButton,
     Layout,
     MenuBar,
     Spinner

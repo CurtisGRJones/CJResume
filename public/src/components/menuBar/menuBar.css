@@ -1,7 +1,7 @@
 .menu-bar {
+    position: fixed;
     height: 100vh;
-    width: 10vw;
-
-    background-color: white;
+    width: var(--menubar-width);
+    background-color: var(--secondary-background-color);
 }
 
