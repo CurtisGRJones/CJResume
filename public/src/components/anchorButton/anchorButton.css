@@ -1,0 +1,27 @@
+.a-btn-content-wrapper {
+    background-color: black;
+    margin: auto;
+    text-align: center;
+    margin: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.a-btn:visited {
+    color: var(--primary-text-color);
+    text-decoration: none; 
+}
+
+.a-btn:link {
+    color: var(--primary-text-color);
+    text-decoration: none; 
+}
+
+.a-btn:hover {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+}
+
+.a-btn:hover { text-decoration: none; }
+
+.a-btn:active { text-decoration: none; }
