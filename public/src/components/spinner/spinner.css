@@ -1,7 +1,7 @@
 :root {
     --spinner-time: 2s;
     --outer-spinner-color: #111111;
-    --hourglass-color: var(--primary-text-color);
+    --hourglass-color: #F0F0F0;
 }
 
 .cover {
