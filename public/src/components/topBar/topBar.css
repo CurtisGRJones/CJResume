@@ -18,5 +18,10 @@
             margin-right: 1rem;
         }
     }
+
+    .contact-me {
+        color: var(--primary-text-color);
+        text-decoration: none;
+    }
 }
 

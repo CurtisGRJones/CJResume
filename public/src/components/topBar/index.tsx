@@ -22,7 +22,7 @@ export const TopBar = () => {
                     </svg>
                 </Link>
                 { /* TODO style this better */ }
-                <Link href='/contact'>
+                <Link href='/contact' className='contact-me'>
                     Contact Me
                 </Link>
             </div>
