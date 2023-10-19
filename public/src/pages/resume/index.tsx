@@ -1,45 +1,27 @@
-import { Grid, Link } from '@mui/material'
+import { Grid } from '@mui/material'
 import './resume.css'
+import { useEffect, useState } from 'react'
+import { CmsControler } from '../../controlers'
 
 export const Resume = () => {
-    // The TODO's to add is because I don't want this information on a repo
-    // TODO put this info in a table
+    // TODO find way to show spinner while use effect is running
+    let [resumeData, setResumeData] = useState({
+        address: '',
+        phoneNumber: '',
+        email: '',
+        profesionalSummary: [],
+        workExperiance: [],
+        education: [],
+        projects: []
+    })
 
-    // TODO add this to a CMS
-    const profesionalSummary = [
-        'McMaster Bachelor of Technology student with an apt for computer hardware, computer software, and robotics. ',
-        'Passion for creative applications of technology',
-        'Appreciates challenges and learning new ways to solve practical problems. ',
-        'Energetic, creative, and sharing of ideas fosters a workplace of healthy creative abrasion.'
-    ]
+    const cmsControler = new CmsControler()
 
-    const workExperiance = [
-        {
-            title: 'Web Developer',
-            location: 'GiftCash, Ancaster, Ontario',
-            when: 'January 2020 – August 2023',
-            points: [
-                'Worked with both front and back end applications to allow for the faster processing of gift cards and providing a better customer experience'
-            ]
-        }
-    ]
-
-
-    const education = [
-        {
-            title: 'Bachelor of Technology – Automation Engineering Technology  ',
-            location: 'McMaster University, Hamilton, Ontario',
-            // TODO confirm this
-            when: 'September 2018 – April 2023',
-            points: [
-                'Awarded Bachelor of Technology Degree, Chemical Engineering Technology Advanced Diploma, and a Business Management Certificate'
-            ]
-        }
-    ]
-
-    const projects = [
-            'This website'
-    ]
+    useEffect(() => {
+        cmsControler.getResumeData().then((resume) => {
+            setResumeData(resume)
+        })
+    }, [resumeData])
 
     const buildUl = (list: string[]) => {
         return (
@@ -83,16 +65,16 @@ export const Resume = () => {
     return (
         <div className='resume'>
             <h1> Curtis Jones </h1>
-            <p className='address'> Address {/* TODO add address */}</p>
+            <p className='address'> {resumeData.address}</p>
             <Grid container
                 justifyContent="flex-end"
                 alignItems="center"
             >
                 <Grid item xs={6} className='left-align'>
-                    <p className='phone-number'> (555) 555-5555 {/* TODO add phone number */} </p>
+                    <p className='phone-number'> {resumeData.phoneNumber} </p>
                 </Grid>
                 <Grid item xs={6} className='right-align'>
-                    <a className='email' href='mailto:email@gmail.com'> email@gmail.com {/* TODO add phone number */} </a>
+                    <a className='email' href='mailto:email@gmail.com'> {resumeData.email} </a>
                 </Grid>
             </Grid>
 
@@ -100,28 +82,28 @@ export const Resume = () => {
 
             <h2> Profesional Summary </h2>
             <div className='left-align'>
-                {buildUl(profesionalSummary)}
+                {buildUl(resumeData.profesionalSummary)}
             </div>
 
             <div className='line' />
 
             <h2> Work Experiance </h2>
             <div className='left-align'>
-                {buildMulti(workExperiance)}
+                {buildMulti(resumeData.workExperiance)}
             </div>
 
             <div className='line' />
 
             <h2> Education </h2>
             <div className='left-align'>
-                {buildMulti(education)}
+                {buildMulti(resumeData.education)}
             </div>
 
             <div className='line' />
 
             <h2> Projects </h2>
             <div className='left-align'>
-                {buildUl(projects)}
+                {buildUl(resumeData.projects)}
             </div>
             <p> References Available Upon Request </p>
         </div>
