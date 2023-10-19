@@ -3,6 +3,7 @@ import { AdcSim } from './adcSim'
 import { Calculator } from './calculator'
 import { Contact } from './contact'
 import { Home } from './home'
+import { Resume } from './resume'
 import { SpinnerPage } from './spinner'
 
 export {
@@ -11,5 +12,6 @@ export {
     Calculator,
     Contact,
     Home,
+    Resume,
     SpinnerPage
 }

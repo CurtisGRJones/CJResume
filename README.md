@@ -8,3 +8,5 @@
 - React
 - MUI
 - MySQL
+
+## TODO make css local

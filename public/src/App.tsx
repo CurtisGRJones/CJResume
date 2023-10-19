@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ConfigControler } from './controlers/ConfigControler';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout, Spinner } from './components';
-import { Home, Page404, Calculator, AdcSim, Contact } from './pages';
+import { Home, Page404, Calculator, AdcSim, Contact, Resume } from './pages';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -37,6 +37,7 @@ function App() {
             { /* <Route path='/adcSim' element={<AdcSim />} /> */ }
             <Route path='/spinner' element={<Spinner />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/resume' element={<Resume />} />
             <Route path="*" element={<Page404 />} />
           </Route>
         </Routes>

@@ -3,7 +3,7 @@ import './calculator.css'
 export const Calculator = () => {
     return (
         <>
-            <p> calc </p>
+            <h1> [WIP] </h1>
         </>
     )
 }
