@@ -1,4 +1,4 @@
-import { Express, Router } from 'express';
+import { NextFunction, Router, Request, Response } from 'express';
 import { middleware as calculatorMiddleware } from './calculator';
 import { middleware as configMiddleware } from './clientConfig';
 import { middleware as cmsMiddleware } from './cms';
@@ -31,6 +31,15 @@ export class Services {
             }
             this.status[middleware.name] = success
         } )
+
+        router.get('/api/', (req: Request, res: Response, next: NextFunction) => {
+            // TODO make this check serices as they are used
+            res.send({
+              running: true,
+              services: this.status
+            })
+            next();
+          });
         return router
     } 
 }

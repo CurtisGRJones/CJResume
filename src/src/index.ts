@@ -17,14 +17,6 @@ if( process.env.NODE_ENV === 'development' ) {
 
 const services = new Services()
 
-app.get('/api/', (req: Request, res: Response) => {
-  // TODO make this check serices as they are used
-  res.send({
-    running: true,
-    services: services.status
-  })
-});
-
 app.use('/api/', services.router);
 
 app.listen(config.PORT, () => {
