@@ -14,9 +14,16 @@
 
 .logo {
     --logo-spacing: calc((var(--menubar-width) / 2) - (120px / 2));
-    position: relative;
+    position: absolute;
     width: 120;
     top: var(--logo-spacing);
     left: var(--logo-spacing);
+}
+
+.copywright {
+    position: absolute;
+    bottom: 2px;
+    text-align: center;
+    width: var(--menubar-width);
 }
 

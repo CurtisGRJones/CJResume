@@ -14,6 +14,9 @@ export const MenuBar = () => {
                 <AnchorButton textContent='CALCULATOR' href='/calculator' />
                 <AnchorButton textContent='ADCSIM' href='/adcSim' />
             </div>
+            <div className='copywright'>
+                <p> &copy; Curtis Jones 2023 </p>
+            </div>
         </div>
     );
 }
