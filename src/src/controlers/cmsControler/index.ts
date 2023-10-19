@@ -2,7 +2,9 @@ import { MongoControler } from '../mongoControler';
 
 export class CmsControler {
 
+    // TODO determine if these should be static
     private client: MongoControler
+    private useDbPromise: Promise<unknown>
 
     constructor() {
         const {
@@ -28,6 +30,16 @@ export class CmsControler {
             mongoHost,
             mongoPort
         )
+
+        this.useDbPromise = this.client.useDb('cms');
+    }
+
+    // TODO type this
+    async getResume(): Promise<any> {
+        await this.useDbPromise
+
+        await this.client.useCollection('resume');
+        return this.client.dumpCollection()
     }
     
 }

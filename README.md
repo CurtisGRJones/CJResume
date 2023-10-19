@@ -10,3 +10,4 @@
 - MySQL
 
 ## TODO make css local
+## TODO make functions consistant

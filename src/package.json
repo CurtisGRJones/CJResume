@@ -9,6 +9,7 @@
     "dev": "rm -r ./dist && yarn build && concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
   },
   "dependencies": {
+    "@types/mongodb": "^4.0.7",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
