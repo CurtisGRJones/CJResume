@@ -18,11 +18,15 @@ export const Home = () => {
         <div className='home'>
             <div className='home-content'>
                 <h1> 
-                    Hello and Welcome, <br/><br/>
-                    My name is Curtis Jones, <br/><br/>
-                    Software Developement is my trade <br/><br/>
-                    Feel free to stick around and <br />
-                    look at some of my projects
+                    &lt;h1&gt;
+                        <div className='tab'>
+                            Hello and Welcome, <br/><br/>
+                            My name is Curtis Jones, <br/><br/>
+                            Software Developement is my trade <br/><br/>
+                            Feel free to stick around and <br />
+                            look at some of my projects
+                        </div>
+                    &lt;/h1&gt;
                 </h1>
             </div>
             <div className='known-tech'>

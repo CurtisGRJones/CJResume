@@ -12,7 +12,7 @@ export const MenuBar = () => {
                 <AnchorButton textContent='HOME' href='/' />
                 <AnchorButton textContent='RESUME' href='/resume' />
                 <AnchorButton textContent='CALCULATOR' href='/calculator' />
-                <AnchorButton textContent='ADCSIM' href='/adcSim' />
+                { /*<AnchorButton textContent='ADCSIM' href='/adcSim' /> */}
             </div>
             <div className='copywright'>
                 <p> &copy; Curtis Jones 2023 </p>
