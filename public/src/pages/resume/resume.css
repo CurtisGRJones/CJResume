@@ -3,7 +3,7 @@
     position: relative;
     width: var(--width);
     min-height: calc(100% - 2rem);
-    background-color: var(--secondary-background-color);
+    background-color: var(--tertiary-background-color);
     text-align: center;
     padding: 1rem;
     left: calc(50% - var(--width) / 2);
