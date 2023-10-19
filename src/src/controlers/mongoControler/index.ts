@@ -56,6 +56,6 @@ export class MongoControler {
     }
 
     async dumpCollection(): Promise<any> {
-        return this.getInUseCollection().find({})
+        return (await this.getInUseCollection().find({})).toArray()
     }
 }

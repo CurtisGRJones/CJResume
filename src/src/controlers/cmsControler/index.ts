@@ -39,7 +39,7 @@ export class CmsControler {
         await this.useDbPromise
 
         await this.client.useCollection('resume');
-        return this.client.dumpCollection()
+        return this.client.dumpCollection();
     }
     
 }
