@@ -30,7 +30,7 @@ export const Resume = () => {
             <Grid container
                 justifyContent="flex-end"
                 alignItems="center"
-            >   
+            >
                 <Grid item xs={6} className='left-align'>
                     <p className='phone-number'> (555) 555-5555 {/* TODO add phone number */} </p>
                 </Grid>
@@ -39,7 +39,7 @@ export const Resume = () => {
                 </Grid>
             </Grid>
 
-            <div className='line'/>
+            <div className='line' />
 
             <h2> Profesional Summary </h2>
             <div className='left-align'>
@@ -52,17 +52,36 @@ export const Resume = () => {
                 </ul>
             </div>
 
-            <div className='line'/>
+            <div className='line' />
 
             <h2> Work Experiance </h2>
             <div className='left-align'>
                 {
-                    workExperiance.map( (job) => (
+                    workExperiance.map((job) => (
                         <div className='job'>
                             <h3>{job.title}</h3>
-                            <p>{job.location}</p>
+                            <Grid container
+                                justifyContent="flex-end"
+                                alignItems="center"
+                            >
+                                <Grid item xs={6} className='left-align'>
+                                    <p className='work-location'> {job.location} </p>
+                                </Grid>
+                                <Grid item xs={6} className='right-align'>
+                                    <p className='work-location'> {job.when} </p>
+                                </Grid>
+                            </Grid>
+                            <ul>
+                                {
+                                    job.points.map((point) => (
+                                        <li>
+                                            {point}
+                                        </li>
+                                    ))
+                                }
+                            </ul>
                         </div>
-                    ) )
+                    ))
                 }
             </div>
         </div>
