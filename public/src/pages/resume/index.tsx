@@ -73,7 +73,7 @@ export const Resume = () => {
 
     return (
         <div className='resume'>
-            {loading && <Spinner />}
+            {loading && <Spinner /> /* TODO find out iof this is needed */}
             <h1> Curtis Jones </h1>
             <p className='address'> {resumeData.address}</p>
             <Grid container
@@ -84,7 +84,7 @@ export const Resume = () => {
                     <p className='phone-number'> {resumeData.phoneNumber} </p>
                 </Grid>
                 <Grid item xs={6} className='right-align'>
-                    <a className='email' href='mailto:email@gmail.com'> {resumeData.email} </a>
+                    <a className='email' href={`mailto:${resumeData.email}`}> {resumeData.email} </a>
                 </Grid>
             </Grid>
 
