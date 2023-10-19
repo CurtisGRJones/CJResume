@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, createContext } from 'react';
 import { ConfigControler } from './controlers/ConfigControler';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout, Spinner } from './components';
@@ -8,18 +8,23 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+const defaultGlobalState = {
+  loading: false,
+  config: {}
+};
+
+const globalStateContext = createContext(defaultGlobalState);
+
 function App() {
   const configControler = new ConfigControler()
   let [config, setConfig] = useState({})
   // TODO find way to make this more global
-  let [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const getConfig = async () => {
       // if loading takes > 250 ms show spinner
       // if spinner shows, make sure it shows for at least 1 second
       setConfig(await configControler.getConfig())
-      setLoading(false)
     }
 
     getConfig().catch((e) => {
@@ -42,7 +47,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      {loading && <Spinner />}
     </>
   );
 }

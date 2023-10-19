@@ -2,6 +2,7 @@ import { Grid } from '@mui/material'
 import './resume.css'
 import { useEffect, useState } from 'react'
 import { CmsControler } from '../../controlers'
+import { Spinner } from '../../components'
 
 export const Resume = () => {
     // TODO find way to show spinner while use effect is running
@@ -15,11 +16,19 @@ export const Resume = () => {
         projects: []
     })
 
+    let [loading, setLoading] = useState(true)
+
     const cmsControler = new CmsControler()
 
     useEffect(() => {
-        cmsControler.getResumeData().then((resume) => {
-            setResumeData(resume)
+        // This makes it look nicer than just flashing, possibly swap to a fase later
+        Promise.all([
+            cmsControler.getResumeData().then((resume) => {
+                setResumeData(resume)
+            }),
+            new Promise(r => setTimeout(r, 1000))
+        ]).then( () => {
+            setLoading(false)
         })
     }, [resumeData])
 
@@ -64,6 +73,7 @@ export const Resume = () => {
 
     return (
         <div className='resume'>
+            {loading && <Spinner />}
             <h1> Curtis Jones </h1>
             <p className='address'> {resumeData.address}</p>
             <Grid container
