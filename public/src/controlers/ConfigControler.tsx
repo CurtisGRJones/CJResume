@@ -1,15 +1,14 @@
 import { ApiControler } from "./ApiControler";
 
-export class ConfigControler {
-
-    api: ApiControler
+export class ConfigControler extends ApiControler{
     config: { [i: string]: any } = {}
 
     constructor() {
-        this.api = new ApiControler()
+        super();
     }
+    
     async getConfig() {
-        this.config = (await this.api.get('config')).data.data
+        this.config = (await this.get('config')).data.data
         return this.config
     }
 }

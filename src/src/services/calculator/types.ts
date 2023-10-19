@@ -1,4 +1,4 @@
-import { Response } from "../types"
+import { Response } from "../../types"
 
 export interface CalculatorRequestData {
     nums: Array<number>

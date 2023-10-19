@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import config from './config';
-import { useServices } from './services';
+import { Services } from './services';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
@@ -14,16 +14,21 @@ if( process.env.NODE_ENV === 'development' ) {
     origin: 'http://localhost:3000'
   }));
 }
-const sercives = useServices(app);
+
+const services = new Services()
+
+app.use(services.router);
 
 app.get('/', (req: Request, res: Response) => {
   // TODO make this check serices as they are used
   res.send({
     running: true,
-    sercives
+    services: services.status
   })
 });
 
+
+
 app.listen(config.PORT, () => {
-  console.log(`[server]: Server is running at http://localhost:${config.PORT}`);
+  console.log(`[server]: Server is running at http://localhost:${config.PORT}/api/`);
 });
