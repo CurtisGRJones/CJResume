@@ -1,5 +1,7 @@
 :root {
     --spinner-time: 2s;
+    --outer-spinner-color: #111111;
+    --hourglass-color: var(--primary-text-color);
 }
 
 .cover {
@@ -9,6 +11,7 @@
     right: 0;
     height: 100%;
     width: 100%;
+    z-index: var(--z-force);
 }
 
 .spinner-container {
@@ -16,7 +19,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-75px, -75px);
-    background: black;
+    background: var(--outer-spinner-color);
     height: 150px;
     width: 150px;
     border-radius: 50%;
@@ -53,13 +56,13 @@
     height:0;
     width: 0;
     position: absolute;
-    border: 50px solid #ffffff;
-    border-color: #ffffff transparent;
+    border: 50px solid var(--hourglass-color);
+    border-color: var(--hourglass-color) transparent;
 }
 
 .sand.hourglass {
     background-color: transparent;
-    border-color: transparent black transparent black;
+    border-color: transparent var(--outer-spinner-color) transparent var(--outer-spinner-color);
 }
 
 
