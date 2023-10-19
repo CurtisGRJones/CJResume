@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { CalculatorResponse } from './types';
-import { validate } from '../utils';
-import { ValidationError } from '../errors';
+import { validate } from '../../utils';
+import { ValidationError } from '../../errors';
 
 // TODO Make this more generic for use with resolve Formula
 

@@ -25,7 +25,7 @@ export class Services {
             const path = middleware.path || `/${middleware.name}/`
             // TODO add more error logging
             try {
-                router.use()
+                router.use(path, middleware.router)
             } catch {
                 success = false
             }

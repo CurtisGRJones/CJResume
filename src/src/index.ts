@@ -17,9 +17,7 @@ if( process.env.NODE_ENV === 'development' ) {
 
 const services = new Services()
 
-app.use(services.router);
-
-app.get('/', (req: Request, res: Response) => {
+app.get('/api/', (req: Request, res: Response) => {
   // TODO make this check serices as they are used
   res.send({
     running: true,
@@ -27,7 +25,7 @@ app.get('/', (req: Request, res: Response) => {
   })
 });
 
-
+app.use('/api/', services.router);
 
 app.listen(config.PORT, () => {
   console.log(`[server]: Server is running at http://localhost:${config.PORT}/api/`);
