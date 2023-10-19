@@ -1,7 +1,7 @@
-import { MongoControler } from "./mongoControler";
+// import { MongoControler } from "./mongoControler";
 import { CmsControler } from "./cmsControler";
 
 export {
-    MongoControler,
+    // MongoControler,
     CmsControler
 }
