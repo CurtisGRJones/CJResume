@@ -1,6 +1,8 @@
 const path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
 module.exports = {
     mode: 'development',
     entry: './src/index.tsx',
@@ -13,7 +15,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, '/dist'),
         filename: 'index.js',
-        publicPath: './public',
+        // publicPath: './public',
+        // globalObject: 'this',
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -31,35 +34,33 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
-            // TODO find out how to do this in 1 rule
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
+                    //'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader'
                 ],
                 exclude: /node_modules/,
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ],
-                exclude: /node_modules/,
+                /*
+                TODO find out why these are causing issues with Webpack
                 include: [
+                    path.join(__dirname, './src'),
+                    path.join(__dirname, './public'),
                     path.join(__dirname, '/node_modules/@fontsource/roboto/300.css'),
                     path.join(__dirname, '/node_modules/@fontsource/roboto/400.css'),
                     path.join(__dirname, '/node_modules/@fontsource/roboto/500.css'),
                     path.join(__dirname, '/node_modules/@fontsource/roboto/700.css'),
-                ]
+                ] 
+                */
             }
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.jsx', '.js'],
     },
     plugins: [
+        new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             template: './public/index.html',
             filename: './index.html',
@@ -68,11 +69,11 @@ module.exports = {
         new CopyPlugin({
             patterns:
                 [{
-                    from: 'public',
+                    from: './public',
                     globOptions: {
                         ignore: ['**/index.html']
                     }
                 }]
-        })
+        }),
     ]
 }

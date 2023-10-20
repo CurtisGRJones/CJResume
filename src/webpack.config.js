@@ -6,7 +6,7 @@ const {
 module.exports = {
   entry: './src/index.ts',
   mode: NODE_ENV,
-  target: 'node',
+  target: 'node16.20',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js'

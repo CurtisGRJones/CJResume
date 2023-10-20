@@ -37,6 +37,7 @@ export const Calculator = () => {
 
     const handleSubmit = (event: any) => {
         try {
+            // TODO remove eval
             setEquation(eval(equation));
             setUsingResult(true)
         } catch (err) {
