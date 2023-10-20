@@ -6,9 +6,10 @@ if [[ $ENV != "production" ]]
         exit 1
 fi
 
-$SCRIPTS_DIR'/install-dependencies.sh'
-$SCRIPTS_DIR'/build.sh'
+${SCRIPTS_DIR}/install-dependencies.sh
+${SCRIPTS_DIR}/build.sh
 
 # cp ${SCRIPTS_DIR}/nginx/nginx.conf /usr/local/nginx/conf 
-mv 
+mv $PROJECT_DIR/dist/public /data/www
+mv $PROJECT_DIR/dist/src /data/api
 
