@@ -72,7 +72,8 @@ module.exports = {
                     from: './public',
                     globOptions: {
                         ignore: ['**/index.html']
-                    }
+                    },
+                    to: './public'
                 }]
         }),
     ]

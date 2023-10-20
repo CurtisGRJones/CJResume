@@ -15,6 +15,6 @@ export const Logo = ({
         height = width * (defaultHeight / defaultWidth)
     }
     return (
-        <img src='/logo.png' width={String(width)} height={String(height)} />
+        <img src='/public/logo.png' width={String(width)} height={String(height)} />
     )
 };

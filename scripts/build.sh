@@ -1,5 +1,7 @@
 #! /bin/bash
 
+rm -r dist
+
 (cd ./src && yarn build);
 
 (cd ./public && yarn build);
