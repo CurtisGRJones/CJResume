@@ -1,5 +1,13 @@
 #! /bin/bash
 
-(cd ./src && yarn install --frozen-lockfile);
+if [[ $ENV != "production" ]]
+    then
+        echo "install should only be used for production purposes, for local devleopment use 'cjweb install-deps' to only install dependencies"
+        exit 1
+fi
 
-(cd ./public && yarn install --frozen-lockfile);
+$SCRIPTS_DIR'/install-dependencies.sh'
+$SCRIPTS_DIR'/build.sh'
+
+cp ${SCRIPTS_DIR}/nginx/nginx.conf /usr/local/nginx/conf 
+
