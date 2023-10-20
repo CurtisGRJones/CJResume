@@ -12,7 +12,8 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'bundle.js'
+        filename: 'index.js',
+        publicPath: './public',
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -21,8 +22,22 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+            },
+            {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+            // TODO find out how to do this in 1 rule
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ],
                 exclude: /node_modules/,
             },
             {
@@ -30,6 +45,13 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader'
+                ],
+                exclude: /node_modules/,
+                include: [
+                    path.join(__dirname, '/node_modules/@fontsource/roboto/300.css'),
+                    path.join(__dirname, '/node_modules/@fontsource/roboto/400.css'),
+                    path.join(__dirname, '/node_modules/@fontsource/roboto/500.css'),
+                    path.join(__dirname, '/node_modules/@fontsource/roboto/700.css'),
                 ]
             }
         ]
@@ -43,13 +65,14 @@ module.exports = {
             filename: './index.html',
             favicon: './public/favicon.ico'
         }),
-        new CopyPlugin({patterns: 
-            [{ 
-                from: 'public', 
-                globOptions: {
-                    ignore: [ '**/index.html' ]
-                }
-            }]
+        new CopyPlugin({
+            patterns:
+                [{
+                    from: 'public',
+                    globOptions: {
+                        ignore: ['**/index.html']
+                    }
+                }]
         })
     ]
 }

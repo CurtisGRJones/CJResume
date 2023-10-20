@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
@@ -15,6 +17,7 @@
     "@types/react": "^18.2.30",
     "@types/react-dom": "^18.2.14",
     "axios": "^1.5.1",
+    "babel-loader": "^9.1.3",
     "formik": "^2.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -26,7 +29,8 @@
   "scripts": {
     "dev": "react-scripts start",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development --hot",
+    "start": "node ./dist/index.js",
+    "wp-dev-server": "webpack-dev-server --open --mode development --hot",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
