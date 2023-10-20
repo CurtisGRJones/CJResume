@@ -1,5 +1,5 @@
 #! /bin/bash
 
-(cd ./src && yarn);
+(cd ./src && yarn install --frozen-lockfile);
 
-(cd ./public && yarn);
+(cd ./public && yarn install --frozen-lockfile);
