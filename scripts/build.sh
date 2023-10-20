@@ -1,13 +1,13 @@
 #! /bin/bash
 
-rm -r dist
+rm -r ${PROJECT_DIR}/dist
 
-(cd ./src && yarn build);
+(cd ${PROJECT_DIR}/src && yarn build);
 
-(cd ./public && yarn build);
+(cd ${PROJECT_DIR}/public && yarn build);
 
-mkdir dist;
+mkdir ${PROJECT_DIR}/dist;
 
-cp -r ./src/dist ./dist/src
-cp -r ./public/dist ./dist/public
+cp -r ${PROJECT_DIR}/src/dist ${PROJECT_DIR}/dist/src
+cp -r ${PROJECT_DIR}/public/dist ${PROJECT_DIR}/dist/public
 

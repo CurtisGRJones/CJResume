@@ -1,6 +1,7 @@
 #! /bin/bash
 
 export SCRIPTS_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+export PROJECT_DIR=$(dirname $SCRIPTS_DIR)
 
 alias cjweb=$SCRIPTS_DIR'/commands.sh'
 
