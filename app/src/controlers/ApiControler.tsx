@@ -5,15 +5,15 @@ export class ApiControler {
 
     constructor(config?: CreateAxiosDefaults) {
         if (!ApiControler.instance) {
+            const apiHost = 
+                process?.env?.API_HOST ||
+                // TODO switch this to HTTPS once I get a TLS cert
+                'http://www.cjresume.ca'
             ApiControler.instance = axios.create({
-                // TODO make this dynamic based on NODE_ENV
-                baseURL: 'http://127.0.0.1:8000/api/',
+                baseURL: '/api/',
                 timeout: 1000,
                 ...config
             });
-            if ( process.env.NODE_ENV !== 'production' ) {
-                // ApiControler.instance.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
-            }
         } 
         
     }
