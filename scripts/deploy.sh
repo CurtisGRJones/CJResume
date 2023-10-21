@@ -6,5 +6,5 @@
 
 SERVER=${SERVER_USER}@${SERVER_HOST}
 
-scp -r ${SCRIPTS_DIR}/docker ${SERVER}:~/;
-ssh ${SERVER} 'cd ~/docker && docker compose pull && docker compose down && docker compose up -d'
+scp -r ${SCRIPTS_DIR}/docker/production ${SERVER}:~/;
+ssh ${SERVER} 'cd ~/production && docker compose pull && docker compose down && docker compose up -d'

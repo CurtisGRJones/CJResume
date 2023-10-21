@@ -1,0 +1,25 @@
+version: '3.1'
+
+# TODO update this to pull from env vars
+name: cjresume-prod
+services:
+  api:
+    image: curtisgrjones/cjweb-api
+    restart: always
+    ports:
+      - 8000:8000
+    env_file:
+      # TODO use a secrets manager
+      - .env
+
+  app:
+    image: curtisgrjones/cjweb-app
+    restart: always
+    ports:
+      - 3000:3000
+
+  nginx:
+    image: curtisgrjones/cjweb-nginx
+    restart: always
+    ports:
+      - 80:80

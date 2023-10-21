@@ -1,7 +1,7 @@
 version: '3.1'
 
 # TODO update this to pull from env vars
-name: cjresume
+name: cjresume-dev
 services:
   mysql:
     image: mysql

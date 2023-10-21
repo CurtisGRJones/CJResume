@@ -1,5 +1,7 @@
 #! /bin/bash
 
+source ${PROJECT_DIR}/.env
+
 export SCRIPTS_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 export PROJECT_DIR=$(dirname $SCRIPTS_DIR)
 

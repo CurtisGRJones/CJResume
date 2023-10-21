@@ -4,6 +4,8 @@
 
 ## TODO find out why redirect works with redirect but not when going to link
 
+## TODO add secrets manager
+
 ./app -> REACT FRONT END
 ./api -> EXPRESS BACK END
 
