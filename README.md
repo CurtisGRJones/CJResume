@@ -1,5 +1,9 @@
 # My-Website
 
+## TODO document, document, document
+
+## TODO find out why redirect works with redirect but not when going to link
+
 ./app -> REACT FRONT END
 ./api -> EXPRESS BACK END
 

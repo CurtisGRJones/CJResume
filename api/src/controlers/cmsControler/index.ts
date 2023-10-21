@@ -31,12 +31,13 @@ export class CmsControler {
             mongoHost,
             mongoPort
         )
-
+        
+        // TODO make db if does not exist
         this.useDbPromise = this.client.useDb('cms');
     }
 
     async seedDb(): Promise<void> {
-        for (const collection of cmsSeedData.keys()) {
+        for (const collection of Object.keys(cmsSeedData)) {
             await this.client.useCollection(collection)
             const data = cmsSeedData[collection]
             if ( Array.isArray(data) ) {
