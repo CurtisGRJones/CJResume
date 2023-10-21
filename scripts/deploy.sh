@@ -7,4 +7,4 @@
 SERVER=${SERVER_USER}@${SERVER_HOST}
 
 scp -r ${SCRIPTS_DIR}/docker ${SERVER}:~/;
-ssh ${SERVER} 'cd ~/docker && docker compose up -d'
+ssh ${SERVER} 'cd ~/docker && docker compose pull && docker compose up && docker compose up -d'
