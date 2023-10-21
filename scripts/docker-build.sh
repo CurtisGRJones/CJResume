@@ -12,5 +12,6 @@ ${SCRIPTS_DIR}/build.sh
 # cp ${SCRIPTS_DIR}/nginx/nginx.conf ${PROJECT_DIR}/dist/nginx.conf;
 
 
-docker build -t cjweb-docker-api ${PROJECT_DIR}/api
-docker build -t cjweb-docker-app ${PROJECT_DIR}/app
+docker build -t cjweb-api ${PROJECT_DIR}/api
+docker build -t cjweb-app ${PROJECT_DIR}/app
+docker build -t cjweb-nginx ${PROJECT_DIR}/nginx
