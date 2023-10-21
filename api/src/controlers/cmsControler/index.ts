@@ -12,25 +12,30 @@ export class CmsControler {
             MONGO_USER: mongoUser,
             MONGO_PASS: mongoPass,
             MONGO_HOST: mongoHost,
-            MONGO_PORT: mongoPort
+            MONGO_PORT: mongoPort,
+            MONGO_CONN_STRING: mongoConString
         } = process.env
 
-        if( !( mongoUser && mongoPass && mongoHost && mongoPort ) ) {
+        if( !( mongoUser && mongoPass && mongoHost && mongoPort ) && ! mongoConString) {
             throw Error('Missing the following ENV vars to connect to mongoDb' +
                 (!mongoUser ? '\nMONGO_USER' : '') +
                 (!mongoPass ? '\nMONGO_PASS' : '') +
                 (!mongoHost ? '\nMONGO_HOST' : '') +
-                (!mongoPort ? '\nMONGO_PORT' : '')
+                (!mongoPort ? '\nMONGO_PORT' : '') +
+                "\nOr\n" +
+                (!mongoConString ? '\MONGO_CONN_STRING' : '')
             )
         }
 
-        this.client = new MongoControler(
-            'mongodb',
-            mongoUser,
-            mongoPass,
-            mongoHost,
-            mongoPort
-        )
+        const conn = mongoConString || {
+            protocal: 'mongodb',
+            user: String(mongoUser),
+            pass: String(mongoPass),
+            host: String(mongoHost),
+            port: String(mongoPort)
+        }
+
+        this.client = new MongoControler({ conn } )
         
         // TODO make db if does not exist
         this.useDbPromise = this.client.useDb('cms');

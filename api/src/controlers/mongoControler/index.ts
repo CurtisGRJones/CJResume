@@ -1,5 +1,16 @@
 import { MongoClient, ServerApiVersion, MongoClientOptions, Db, Collection } from 'mongodb'
 
+interface constructorOptions {
+    conn: {
+        protocal: string, 
+        user: string, 
+        pass: string, 
+        host: string, 
+        port: string | number, 
+    } | string
+    options?: MongoClientOptions
+}
+
 export class MongoControler {
 
     private client: MongoClient
@@ -7,9 +18,22 @@ export class MongoControler {
     private db: Db | undefined
     private collection: Collection | undefined
 
-    constructor(protocal: string, user: string, pass: string, host: string, port: string | number, options?: MongoClientOptions) {
-        const uri = `${protocal}://${user}:${pass}@${host}:${port}`;
-        this.client = new MongoClient(uri,  {
+    constructor({
+        conn,
+        options
+    }: constructorOptions) {
+        if ( typeof conn === 'object' ) {
+            const {
+                protocal, 
+                user, 
+                pass, 
+                host, 
+                port
+            } = conn;
+
+            conn = `${protocal}://${user}:${pass}@${host}:${port}`
+        }
+        this.client = new MongoClient(conn,  {
             serverApi: {
                 version: ServerApiVersion.v1,
                 strict: true,
