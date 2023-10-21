@@ -12,6 +12,9 @@ case $1 in
     docker-build)
         $SCRIPTS_DIR'/docker-build.sh';
         ;;
+    docker-publish)
+        $SCRIPTS_DIR'/docker-publish.sh';
+        ;;
     docker-run)
         $SCRIPTS_DIR'/docker-run.sh';
         ;;

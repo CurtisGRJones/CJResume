@@ -1,11 +1,7 @@
 #! /bin/bash
 
-if [[ $ENV != "production" ]]
-    then
-        echo "deploy should only be used for production purposes"
-        exit 1
-fi
+##  Esure ~/.ssh/config is configures with
+##  Host SERVER_HOST
+##  IdentityFile /path/to/private/key
 
-$SCRIPTS_DIR/install-project.sh
-
-# TODO deploy to EC2
+scp ./docker ${SERVER_USER}@${SERVER_HOST}:/
