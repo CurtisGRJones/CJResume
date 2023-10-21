@@ -1,9 +1,13 @@
 #! /bin/bash
 
+# TODO find something better than APT for instalation
+# TODO add docker
+
 if ! (which node > /dev/null) 
     then
         echo "Node not found, installing node";
-        sudo apt install node;
+        sudo apt update > /dev/null;
+        sudo apt install node > /dev/null;
 fi
 
 NODE_VERSION="16.20"
@@ -38,7 +42,7 @@ if [[ $(node -v) != v$NODE_VERSION* ]]
         fi
 fi
 
-if [[ $ENV == 'production' ]]
+if ( [[ $ENV == 'production' ]] && which nginx > /dev/null )
     then
         sudo apt update > /dev/null;
         sudo apt install nginx > /dev/null;
@@ -52,8 +56,8 @@ fi
 
 echo "Node installed with version" $(node -v);
 
-echo "Installing node packages for express server"
-(cd ./src && yarn install --frozen-lockfile > /dev/null);
+echo "Installing node packages for app"
+(cd ./app && yarn install --frozen-lockfile > /dev/null);
 
-echo "Installing node packages for react server"
-(cd ./public && yarn install --frozen-lockfile > /dev/null);
+echo "Installing node packages for api"
+(cd ./api && yarn install --frozen-lockfile > /dev/null);

@@ -6,6 +6,6 @@ if [[ $ENV != "production" ]]
         exit 1
 fi
 
-$SCRIPTS_DIR'/install.sh'
+$SCRIPTS_DIR/install-project.sh
 
-# TODO 
+# TODO deploy to EC2

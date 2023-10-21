@@ -1,7 +1,7 @@
 # My-Website
 
-./public -> REACT FRONT END
-./src -> EXPRESS BACK END
+./app -> REACT FRONT END
+./api -> EXPRESS BACK END
 
 # Technologies used
 - Express
