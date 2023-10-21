@@ -1,6 +1,6 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
-const CopyPlugin = require("copy-webpack-plugin");
+//const Dotenv = require('dotenv-webpack');
+//const CopyPlugin = require("copy-webpack-plugin");
 const {
   NODE_ENV = 'production',
 } = process.env;
@@ -26,13 +26,13 @@ module.exports = {
     ]
   },
   plugins: [
-    new Dotenv(),
-    new CopyPlugin({
-      patterns:
-          [{
-              from: '.env',
-              to: '.'
-          }]
-  }),
+    //new Dotenv(),
+    //new CopyPlugin({
+      //patterns:
+          //[{
+              //from: '.env',
+              //to: '.'
+          //}]
+  //}),
   ],
 }
