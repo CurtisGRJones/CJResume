@@ -23,7 +23,7 @@ export class CmsControler {
                 (!mongoHost ? '\nMONGO_HOST' : '') +
                 (!mongoPort ? '\nMONGO_PORT' : '') +
                 "\nOr\n" +
-                (!mongoConString ? '\MONGO_CONN_STRING' : '')
+                (!mongoConString ? '\nMONGO_CONN_STRING' : '')
             )
         }
 
