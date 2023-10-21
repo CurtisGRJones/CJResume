@@ -4,4 +4,7 @@
 ##  Host SERVER_HOST
 ##  IdentityFile /path/to/private/key
 
-scp ./docker ${SERVER_USER}@${SERVER_HOST}:/
+SERVER=${SERVER_USER}@${SERVER_HOST}
+
+scp -r ${SCRIPTS_DIR}/docker ${SERVER}:~/;
+ssh ${SERVER} 'cd ~/docker && docker compose up -d'
