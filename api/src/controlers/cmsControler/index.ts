@@ -1,4 +1,5 @@
 import { MongoControler } from '../mongoControler';
+import { cms as cmsSeedData } from '../../seedData';
 
 export class CmsControler {
 
@@ -32,6 +33,18 @@ export class CmsControler {
         )
 
         this.useDbPromise = this.client.useDb('cms');
+    }
+
+    async seedDb(): Promise<void> {
+        for (const collection of cmsSeedData.keys()) {
+            await this.client.useCollection(collection)
+            const data = cmsSeedData[collection]
+            if ( Array.isArray(data) ) {
+                console.error(`Bulk addition is not implemented. collection: ${collection}`)
+            } else {
+                await this.client.addDocument(cmsSeedData[collection])
+            }
+        }
     }
 
     // TODO type this

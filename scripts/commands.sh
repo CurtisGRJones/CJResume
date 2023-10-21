@@ -15,9 +15,6 @@ case $1 in
     docker-run)
         $SCRIPTS_DIR'/docker-run.sh';
         ;;
-    install)
-        $SCRIPTS_DIR'/install-project.sh';
-        ;;
     install-deps)
         $SCRIPTS_DIR'/install-dependencies.sh';
         ;;

@@ -1,0 +1,3 @@
+[submodule "CJResume-Seed-Data"]
+	path = api/src/seedData
+	url = git@github.com:CurtisGRJones/CJResume-Seed-Data.git

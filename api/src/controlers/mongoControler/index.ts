@@ -58,4 +58,10 @@ export class MongoControler {
     async dumpCollection(): Promise<any> {
         return (await this.getInUseCollection().find({})).toArray()
     }
+
+    async addDocument(document: any): Promise<void> {
+        await this.getInUseCollection().insertOne(
+            document
+        )
+    }
 }
