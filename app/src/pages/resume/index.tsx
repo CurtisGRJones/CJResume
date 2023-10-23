@@ -31,7 +31,7 @@ export const Resume = () => {
         ]).then( () => {
             setLoading(false)
         })
-    }, [resumeData])
+    }, [])
 
     const buildUl = (list: string[]) => {
         return (
