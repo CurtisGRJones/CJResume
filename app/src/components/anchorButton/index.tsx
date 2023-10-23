@@ -1,6 +1,5 @@
-import { Button } from '@mui/material';
 import { useNavigate } from "react-router-dom";
-import './anchorButton.css'
+import styles from './anchorButton.module.css'
 
 export const AnchorButton = ({
     textContent,
@@ -13,10 +12,10 @@ export const AnchorButton = ({
     }
 
     return (
-        <div onClick={redirect} className='a-btn'>
-            <div className='a-btn-content-wrapper'>
-                <div className='a-btn-bar' />
-                <span className='a-btn-text-content'> {textContent} </span>
+        <div onClick={redirect} className={styles['a-btn']}>
+            <div className={styles['a-btn-content-wrapper']}>
+                <div className={styles['a-btn-bar']} />
+                <span className={styles['a-btn-text-content']}> {textContent} </span>
             </div>
         </div>
     );

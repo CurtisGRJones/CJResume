@@ -4,22 +4,25 @@
 
 case $1 in
     build)
-        $SCRIPTS_DIR'/build.sh';
+        ${SCRIPTS_DIR}/build.sh;
         ;;
     deploy)
-        $SCRIPTS_DIR'/deploy.sh';
+        ${SCRIPTS_DIR}/deploy.sh;
         ;;
     docker-build)
-        $SCRIPTS_DIR'/docker-build.sh';
+        ${SCRIPTS_DIR}/docker-build.sh;
         ;;
-    docker-publish)
-        $SCRIPTS_DIR'/docker-publish.sh';
+    docker-push)
+        ${SCRIPTS_DIR}/docker-publish.sh;
         ;;
     docker-run)
-        $SCRIPTS_DIR'/docker-run.sh';
+        ${SCRIPTS_DIR}/docker-run.sh;
+        ;;
+    dev-start)
+        ${SCRIPTS_DIR}/dev-start.sh;
         ;;
     install-deps)
-        $SCRIPTS_DIR'/install-dependencies.sh';
+        ${SCRIPTS_DIR}/install-dependencies.sh;
         ;;
     *)
         echo "Unknown command $1"

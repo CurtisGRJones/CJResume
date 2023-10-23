@@ -16,7 +16,7 @@ if [[ $(node -v) != v$NODE_VERSION* ]]
     then
         echo "Node installed with version" $(node -v) "expected v$NODE_VERSION.x, changing versions";
         if [[ $ENV == 'production' ]]
-            then 
+            then
                 if ! (which n > /dev/null)
                     then
                         echo "N not found, installing n";
@@ -42,12 +42,6 @@ if [[ $(node -v) != v$NODE_VERSION* ]]
         fi
 fi
 
-if ( [[ $ENV == 'production' ]] && which nginx > /dev/null )
-    then
-        sudo apt update > /dev/null;
-        sudo apt install nginx > /dev/null;
-fi
-
 if ! (which yarn > /dev/null)
     then
         echo "Yarn not found, installing yarn";
@@ -57,7 +51,7 @@ fi
 echo "Node installed with version" $(node -v);
 
 echo "Installing node packages for app"
-(cd ./app && yarn install --frozen-lockfile > /dev/null);
+(cd ./app && yarn install --frozen-lockfile);
 
 echo "Installing node packages for api"
-(cd ./api && yarn install --frozen-lockfile > /dev/null);
+(cd ./api && yarn install --frozen-lockfile);

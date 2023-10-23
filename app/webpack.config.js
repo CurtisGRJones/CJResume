@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = () => {
     return {
-        mode: 'development',
         entry: './src/index.tsx',
         devtool: 'inline-source-map',
         performance: {
@@ -17,13 +16,11 @@ module.exports = () => {
         output: {
             path: path.join(__dirname, '/dist'),
             filename: 'index.js',
-            // publicPath: './public',
-            // globalObject: 'this',
         },
-        devtool: 'inline-source-map',
         devServer: {
-            static: './dist',
-            // publicPath: '/public'
+            port: 8001,
+            contentBase: path.join(__dirname, "/dist"),
+            historyApiFallback: { index: '/', disableDotRule: true }
         },
         module: {
             rules: [
@@ -40,7 +37,6 @@ module.exports = () => {
                 {
                     test: /\.css$/,
                     use: [
-                        //'style-loader',
                         MiniCssExtractPlugin.loader,
                         'css-loader'
                     ],

@@ -1,0 +1,25 @@
+.content {
+    position: relative;
+    height: 100%;
+    padding: 3rem;
+}
+
+.tech-item {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media all and (min-width: 1000px) {
+    .home {
+        display: flex;
+        align-items: center;
+    }
+
+
+}
+
+@media all and (max-width: 1000px) {
+    .home {
+        display: block;
+    }
+}

@@ -13,7 +13,8 @@ export class CmsControler {
             MONGO_PASS: mongoPass,
             MONGO_HOST: mongoHost,
             MONGO_PORT: mongoPort,
-            MONGO_CONN_STRING: mongoConString
+            MONGO_CONN_STRING: mongoConString,
+            MONGO_CMS_DATABASE_NAME: mongoCmsDbName
         } = process.env
 
         if( !( mongoUser && mongoPass && mongoHost && mongoPort ) && ! mongoConString) {
@@ -38,7 +39,7 @@ export class CmsControler {
         this.client = new MongoControler({ conn } )
         
         // TODO make db if does not exist
-        this.useDbPromise = this.client.useDb('cms');
+        this.useDbPromise = this.client.useDb(mongoCmsDbName || 'cms');
     }
 
     async seedDb(): Promise<void> {

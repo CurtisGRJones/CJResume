@@ -1,19 +1,70 @@
-# My-Website
+# [CJResume.ca](http://www.cjresume.ca)
 
-## TODO document, document, document
-
-## TODO find out why redirect works with redirect but not when going to link
-
-## TODO add secrets manager
-
-./app -> REACT FRONT END
-./api -> EXPRESS BACK END
-
-# Technologies used
+## Dependencies & Technologies Used
+- Node16.20
 - Express
 - React
+- Docker
+- TypeScript
+- JavaScript
+- HTML
+- CSS
+- Webpack5
+- Nginx
+- MongoDB
 - MUI
-- MySQL
+- MySQL // To be implemented
 
-## TODO make css local
-## TODO make functions consistant
+## Start Up
+```
+$ touch .env
+$ source ./scripts/activate.sh
+$ cjweb install-deps
+$ cjweb build
+$ cjweb docker-build
+$ cjweb docker-run
+```
+
+## Deployment
+Ensure ~/.ssh/config has the approriate key to the website
+```
+$ cjweb docker-publish
+$ cjweb deploy
+```
+
+## TODO
+
+### Tech Debt
+- Update documentation
+- Fix warnings when building on webpack
+- Declare functions as () => {} where possible for consistency 
+- Make options for selecting services and environment for `cjweb` commands
+- Add docker to install script
+- Allow ssh key to be passed into command for `scp` and `ssh` commands
+- Switch calaculator to use regex and not eval()
+- Move all .env files together for each environemnt
+
+### Bug Log
+- CSS is causing undesired style on firefox
+- webkit-scrollbar is still being publically implemented from caculator
+- Calculator not verically centered
+- Content not verically cented in content div
+- Copywright popping out when nav bar comes out
+
+### New Features
+- Add popout for nav bar on mobile
+- User system, resets daily
+- Transaction record/wallet
+- Add ESLint file
+- Use secrets manager to serve env variables
+- Implement TLS cert to allow for HTTPS
+
+## Change Log
+
+### October 22nd 2023
+- Fixed 502 when going to pages other than index
+- Improved scaling with page sizes
+- Made CSS modulized for each import
+
+### October 20th 2023
+- Inital launch

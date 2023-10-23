@@ -1,4 +1,4 @@
-import './logo.css'
+import styimes from './logo.module.css'
 
 export const Logo = ({
     width,

@@ -1,6 +1,7 @@
 import { MouseEventHandler, useState } from 'react'
-import './calculator.css'
 import { ToastContainer, toast } from 'react-toastify'
+
+import styles from './calculator.module.css'
 
 export const Calculator = () => {
     const [equation, setEquation] = useState('')
@@ -51,28 +52,28 @@ export const Calculator = () => {
     }
 
     return (
-        <div className='calculator'>
-            <div className='display'>
+        <div className={styles['calculator']}>
+            <div className={styles['display']}>
                 <p> {equation} </p>
             </div>
-            <div className='buttons'>
-                <div className='numbers'>
+            <div className={styles['buttons']}>
+                <div className={styles['numbers']}>
                     {
                         Array(10).fill(undefined).map((_, index) => {
                             const btnNumber = 9 - index
                             return (
-                                <button key={btnNumber} className={`calc-btn number-btn number-${btnNumber}`} onClick={handlePress(btnNumber)}>
+                                <button key={btnNumber} className={[styles['calc-btn'], styles['number-btn'], styles[`number-${btnNumber}`]].join(' ')} onClick={handlePress(btnNumber)}>
                                     {btnNumber}
                                 </button>
                             )
                         })
                     }
                 </div>
-                <div className='symbols'>
+                <div className={styles['symbols']}>
                     {
                         ['+', '-', '*', '/'].map((symbol) => {
                             return (
-                                <button key={symbol} className={`calc-btn symbol-btn symbol-${symbol}`} onClick={handlePress(symbol)}>
+                                <button key={symbol} className={[styles['calc-btn'], styles['symbol-btn'], styles[`symbol-${symbol}`]].join(' ')} onClick={handlePress(symbol)}>
                                     {symbol}
                                 </button>
                             )
@@ -80,13 +81,13 @@ export const Calculator = () => {
                     }
                 </div>
                 <div className='functions'>
-                    <button className={`calc-btn function-btn function-back`} onClick={handleBack}>
-                        <div className='arrow-left' />
+                    <button className={[styles['calc-btn'], styles['function-btn'], styles['function-back']].join(' ')} onClick={handleBack}>
+                        <div className={styles['arrow-left']} />
                     </button>
-                    <button className={`calc-btn function-btn function-clear`} onClick={handleClear}>
+                    <button className={[styles['calc-btn'], styles['function-btn'], styles['function-clear']].join(' ')} onClick={handleClear}>
                         <p> CLR </p>
                     </button>
-                    <button className={`calc-btn function-btn function-eq`} onClick={handleSubmit}>
+                    <button className={[styles['calc-btn'], styles['function-btn'], styles['function-eq']].join(' ')} onClick={handleSubmit}>
                         <p> = </p>
                     </button>
                 </div>

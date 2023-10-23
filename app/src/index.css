@@ -7,7 +7,8 @@
   --secondary-text-color: #000000;
   --tertiary-text-color: #ffffff;
 
-  --menubar-width: 10vw;
+  --navigationbar-width: 175px;
+  --topbar-height: 100px;
 
   --z-bot: 0;
   --z-mid: 10;
@@ -32,6 +33,12 @@ code {
 
 .tab {
   margin-left: 1rem;
+}
+
+.preload *{
+  animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important;
+  transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
 }
 
 

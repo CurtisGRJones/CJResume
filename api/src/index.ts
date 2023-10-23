@@ -17,8 +17,7 @@ try {
   app.use('/api', services.router);
 
   app.listen(config.PORT, () => {
-    console.log(`[server]: Server is running at http://localhost:${config.PORT}/api/ as ${config.NODE_ENV} server`);
-    console.log(config);
+    console.log(`[server]: Server is running at http://localhost:${config.PORT}/api/ as ${config.ENV} server`);
   });
 } catch (e) {
   console.error(`[server]: Failed to start server due to error\n${e}`)

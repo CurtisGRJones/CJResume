@@ -1,9 +1,7 @@
-.menu-bar {
-    position: fixed;
-    height: 100vh;
-    width: var(--menubar-width);
+.navigation-bar {
+    width: var(--navigationbar-width);
     background-color: var(--secondary-background-color);
-    z-index: var(--z-top);
+    height: 100vh;
 }
 
 .navigation {
@@ -13,7 +11,7 @@
 }
 
 .logo {
-    --logo-spacing: calc((var(--menubar-width) / 2) - (120px / 2));
+    --logo-spacing: calc((var(--navigationbar-width) / 2) - (120px / 2));
     position: absolute;
     width: 120;
     top: var(--logo-spacing);
@@ -24,6 +22,6 @@
     position: absolute;
     bottom: 2px;
     text-align: center;
-    width: var(--menubar-width);
+    width: var(--navigationbar-width);
 }
 

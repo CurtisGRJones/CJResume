@@ -4,13 +4,13 @@
     margin-top: 10px;
     position: relative;
     left: 10px;
-    width: calc(var(--menubar-width) - 20px);
+    width: calc(var(--navigationbar-width) - 20px);
     height: var(--a-btn-height);
 
     .a-btn-bar {
         position: absolute;
         height: 2px;
-        width: calc(var(--menubar-width) - 20px);
+        width: calc(var(--navigationbar-width) - 20px);
         background-color: var(--primary-text-color);
         border-radius: 10px;
         bottom: 0;

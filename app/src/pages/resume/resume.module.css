@@ -5,6 +5,7 @@
     min-height: calc(100% - 2rem);
     background-color: var(--tertiary-background-color);
     text-align: center;
+    margin: 1rem;
     padding: 1rem;
     left: calc(50% - var(--width) / 2);
 }

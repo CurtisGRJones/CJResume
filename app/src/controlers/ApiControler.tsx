@@ -6,11 +6,10 @@ export class ApiControler {
     constructor(config?: CreateAxiosDefaults) {
         if (!ApiControler.instance) {
             const apiHost = 
-                // process?.env?.API_HOST ||
-                // TODO switch this to HTTPS once I get a TLS cert
+                process.env.REACT_APP_API_HOST ||
                 'http://www.cjresume.ca'
             ApiControler.instance = axios.create({
-                baseURL: '/api/',
+                baseURL: `${apiHost}/api/`,
                 timeout: 1000,
                 ...config
             });

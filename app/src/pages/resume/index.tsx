@@ -1,8 +1,9 @@
 import { Grid } from '@mui/material'
-import './resume.css'
 import { useEffect, useState } from 'react'
 import { CmsControler } from '../../controlers'
 import { Spinner } from '../../components'
+
+import styles from './resume.module.css'
 
 export const Resume = () => {
     // TODO find way to show spinner while use effect is running
@@ -53,17 +54,17 @@ export const Resume = () => {
     }[]) => {
 
         return ( list.map((item) => (
-            <div className='multi'>
+            <div className={styles['multi']}>
                 <h3>{item.title}</h3>
                 <Grid container
                     justifyContent="flex-end"
                     alignItems="center"
                 >
-                    <Grid item xs={6} className='left-align'>
-                        <p className='work-location'> {item.location} </p>
+                    <Grid item xs={6} className={styles['left-align']}>
+                        <p className={styles['work-location']}> {item.location} </p>
                     </Grid>
-                    <Grid item xs={6} className='right-align'>
-                        <p className='work-location'> {item.when} </p>
+                    <Grid item xs={6} className={styles['right-align']}>
+                        <p className={styles['work-location']}> {item.when} </p>
                     </Grid>
                 </Grid>
                 {buildUl(item.points)}
@@ -72,47 +73,47 @@ export const Resume = () => {
     }
 
     return (
-        <div className='resume'>
+        <div className={styles['resume']}>
             {loading && <Spinner /> /* TODO find out iof this is needed */}
             <h1> Curtis Jones </h1>
-            <p className='address'> {resumeData.address}</p>
+            <p className={styles['address']}> {resumeData.address}</p>
             <Grid container
                 justifyContent="flex-end"
                 alignItems="center"
             >
-                <Grid item xs={6} className='left-align'>
-                    <p className='phone-number'> {resumeData.phoneNumber} </p>
+                <Grid item xs={6} className={styles['left-align']}>
+                    <p className={styles['phone-number']}> {resumeData.phoneNumber} </p>
                 </Grid>
-                <Grid item xs={6} className='right-align'>
-                    <a className='email' href={`mailto:${resumeData.email}`}> {resumeData.email} </a>
+                <Grid item xs={6} className={styles['right-align']}>
+                    <a className={styles['email']} href={`mailto:${resumeData.email}`}> {resumeData.email} </a>
                 </Grid>
             </Grid>
 
-            <div className='line' />
+            <div className={styles['line']} />
 
             <h2> Profesional Summary </h2>
-            <div className='left-align'>
+            <div className={styles['left-align']}>
                 {buildUl(resumeData.profesionalSummary)}
             </div>
 
-            <div className='line' />
+            <div className={styles['line']} />
 
             <h2> Work Experiance </h2>
-            <div className='left-align'>
+            <div className={styles['left-align']}>
                 {buildMulti(resumeData.workExperiance)}
             </div>
 
-            <div className='line' />
+            <div className={styles['line']} />
 
             <h2> Education </h2>
-            <div className='left-align'>
+            <div className={styles['left-align']}>
                 {buildMulti(resumeData.education)}
             </div>
 
-            <div className='line' />
+            <div className={styles['line']} />
 
             <h2> Projects </h2>
-            <div className='left-align'>
+            <div className={styles['left-align']}>
                 {buildUl(resumeData.projects)}
             </div>
             <p> References Available Upon Request </p>

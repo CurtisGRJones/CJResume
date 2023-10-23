@@ -1,4 +1,4 @@
-import './contact.css'
+import styles from './contact.module.css'
 
 export const Contact = () => {
     // TODO put this on a CMS
@@ -18,7 +18,7 @@ export const Contact = () => {
     ]
 
     return (
-        <div className='contact'>
+        <div className={styles['contact']}>
             <table>
                 <tbody>
                     {contactInfo.map((contact) => (

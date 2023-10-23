@@ -2,23 +2,25 @@ import { useEffect, useState, createContext } from 'react';
 import { ConfigControler } from './controlers/ConfigControler';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout, Spinner } from './components';
-import { Home, Page404, Calculator, AdcSim, Contact, Resume } from './pages';
+import { Home, Page404, Calculator, Contact, Resume } from './pages';
 // import '@fontsource/roboto/300.css';
 // import '@fontsource/roboto/400.css';
 // import '@fontsource/roboto/500.css';
 // import '@fontsource/roboto/700.css';
 
-const defaultGlobalState = {
-  loading: false,
-  config: {}
-};
-
-const globalStateContext = createContext(defaultGlobalState);
-
 function App() {
   const configControler = new ConfigControler()
   let [config, setConfig] = useState({})
   // TODO find way to make this more global
+
+  useEffect(() => {
+    setTimeout(function(){
+      document.querySelectorAll('.preload').forEach( element => {
+        element.classList.remove('preload')
+      } )
+    },500);
+    
+  }, [])
 
   useEffect(() => {
     const getConfig = async () => {
@@ -39,7 +41,6 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/calculator" element={<Calculator />} />
-            { /* <Route path='/adcSim' element={<AdcSim />} /> */ }
             <Route path='/spinner' element={<Spinner />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/resume' element={<Resume />} />

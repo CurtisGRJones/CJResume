@@ -7,7 +7,7 @@ export function getConfig(req: Request, res: Response) {
         success: true,
         statusCode: 200,
         data: {
-            env: config.NODE_ENV
+            env: config.ENV
         }
     })
 }
