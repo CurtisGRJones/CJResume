@@ -43,11 +43,11 @@ $ cjweb deploy
 - Allow ssh key to be passed into command for `scp` and `ssh` commands
 - Switch calaculator to use regex and not eval()
 - Move all .env files together for each environemnt
+- Version docker releases so website can be reverted if needed
 
 ### Bug Log
 - CSS is causing undesired style on firefox
-- webkit-scrollbar is still being publically implemented from caculator
-- Calculator not verically centered on production 
+- webkit-scrollbar is still being publically implemented from caculator 
 - Content not verically cented in content div
 - Copywright popping out when nav bar comes out
 
@@ -65,6 +65,7 @@ $ cjweb deploy
 - Fixed 502 when going to pages other than index
 - Improved scaling with page sizes
 - Made CSS modulized for each import
+- Fixed calculator being off screen
 
 ### October 20th 2023
 - Inital launch
