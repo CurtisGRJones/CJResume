@@ -6,8 +6,10 @@
 
 .calculator{
     position: absolute;
+    width: fit-content;
     left: 50%;
     top: 50%;
+    width: calc( 2rem + ( 4 * var(--number-btn-size) ));
     transform: translate(-50%, -50%);
     padding-top: 3rem;
     padding-left: 1rem;
