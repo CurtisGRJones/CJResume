@@ -6,13 +6,12 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    width: var(--width);
-    min-width: var(--width);
+    max-width: var(--width);
     padding: 1rem;
 }
 
 .resume-content {
-    width: calc(var(--width) - 2rem);
+    width: calc(100% - 2rem);
     background-color: var(--tertiary-background-color);
     text-align: center;
     padding: 1rem;
@@ -39,4 +38,10 @@
 
 .right-align {
     text-align: right;
+}
+
+@media all and (max-width: 700px) {
+    .resume-content {
+        font-size: 0.75rem;
+    }
 }
