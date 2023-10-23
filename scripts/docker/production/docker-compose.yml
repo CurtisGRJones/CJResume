@@ -1,6 +1,6 @@
 version: '3.1'
 
-# TODO update this to pull from env vars
+# TODO use a secrets manager
 name: cjresume-prod
 services:
   api:
@@ -9,10 +9,17 @@ services:
     ports:
       - 8000:8000
     env_file:
-      # TODO use a secrets manager
       - .env.api
     environment:
       PORT: 8000
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 50M
+        reservations:
+          cpus: '0.1'
+          memory: 20M
 
   app:
     image: curtisgrjones/cjweb-app
@@ -21,9 +28,25 @@ services:
       - 3000:3000
     env_file:
       - .env.app
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 100M
+        reservations:
+          cpus: '0.1'
+          memory: 20M
 
   nginx:
     image: curtisgrjones/cjweb-nginx
     restart: always
     ports:
       - 80:80
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 50M
+        reservations:
+          cpus: '0.01'
+          memory: 6M

@@ -12,6 +12,12 @@ case $1 in
     docker-build)
         ${SCRIPTS_DIR}/docker-build.sh;
         ;;
+    prod-connect)
+        ${SCRIPTS_DIR}/prod-connect.sh;
+        ;;
+    prod-health)
+        ${SCRIPTS_DIR}/docker-prod-stats.sh;
+        ;;
     docker-push)
         ${SCRIPTS_DIR}/docker-push.sh;
         ;;
