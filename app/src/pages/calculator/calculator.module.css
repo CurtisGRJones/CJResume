@@ -6,11 +6,10 @@
 
 .calculator{
     position: absolute;
-    width: fit-content;
     left: 50%;
     top: 50%;
-    width: calc( 2rem + ( 4 * var(--number-btn-size) ));
     transform: translate(-50%, -50%);
+    width: calc( 2rem + ( 4 * var(--number-btn-size) ));
     padding-top: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -114,12 +113,12 @@
     transform: rotate(135deg);
 }
 
+/* TODO make this ocal to just the calculator
 ::-webkit-scrollbar {
     height: 5px;
     z-index: 0;
 }
   
-/* Track */
 ::-webkit-scrollbar-track {
     margin-left: 1px;
     margin-right: 1px;
@@ -130,14 +129,13 @@
     z-index: 1;
 }
    
-/* Handle */
 ::-webkit-scrollbar-thumb {
     height: 4px;
     border-radius: 2px;
     background: var(--primary-text-color); 
 }
   
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--tertiary-text-color); 
 }
+*/

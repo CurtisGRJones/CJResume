@@ -1,5 +1,9 @@
+:root {
+    --transition-time: 0.5s;
+}
+
 .page {
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     color: #f0f0f0;
 }
@@ -7,28 +11,32 @@
 .scroll-page {
     position: absolute;
     min-height: 100%;
+    min-width: 100%;
     left: var(--navigationbar-width);
-    z-index: var(--z-bot);
-    background-color: var(--primary-background-color);
 }
 
 .top-bar {
-    min-width: 100%;
+    position: fixed;
+    top: calc( -1 * var(--scroll-position-y) );
     min-height: fit-content;
-    transition: 0.5s;
+    overflow-y: clip;
 }
 
 .content {
+    position: absolute;
     min-width: 100%;
+    min-height: 100%;
     top: var(--topbar-height);
 }
 
 .navigation-bar {
     position: fixed;
-    top:0;
+    left: var(--scroll-position-y);
+    top: 0;
+    height: 100%;
     background-color: var(--secondary-background-color);
-    z-index: calc(var(--z-bot) + 1);
     transition: 0.5s;
+    z-index: var(--z-top);
 }
 
 .show-nav {
@@ -51,47 +59,47 @@
 }
 
 .show {
-    animation: show 0.5s;
+    animation: show var(--transition-time);
     animation-fill-mode: forwards;
 }
 
 .hide {
-    animation: hide 0.5s;
+    animation: hide var(--transition-time);
     animation-fill-mode: forwards;
 }
 
 @media all and (max-width: 750px) {
-    .scroll-page {
-        animation: extend 0.5s;
+    .scroll-page, .top-bar {
+        animation: extend var(--transition-time);
         animation-fill-mode: forwards;
     }   
 }
 
 @media all and (min-width: 750px) {
-    .scroll-page {
-        animation: compress 0.5s;
+    .scroll-page, .top-bar {
+        animation: compress var(--transition-time);
         animation-fill-mode: forwards;
     }
 }
 
 @keyframes extend {
     0% {
-        min-width: calc(100vw - var(--navigationbar-width));
+        min-width: calc(100% - var(--navigationbar-width));
         left: var(--navigationbar-width);
     }
     100% {
-        min-width: 100vw;
+        min-width: 100%;
         left: 0;
     }
 }
 
 @keyframes compress {
     0% {
-        min-width: 100vw;
+        min-width: 100%;
         left: 0;
     }
     100% {
-        min-width: calc(100vw - var(--navigationbar-width));
+        min-width: calc(100% - var(--navigationbar-width));
         left: var(--navigationbar-width);
     }
 }

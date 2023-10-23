@@ -8,7 +8,7 @@
   --tertiary-text-color: #ffffff;
 
   --navigationbar-width: 175px;
-  --topbar-height: 100px;
+  --topbar-height: 110px;
 
   --z-bot: 0;
   --z-mid: 10;
@@ -24,6 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Audiowide';
+  background-color: var(--primary-background-color);
 }
 
 code {

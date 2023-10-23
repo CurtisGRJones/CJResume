@@ -1,7 +1,7 @@
 .navigation-bar {
     width: var(--navigationbar-width);
     background-color: var(--secondary-background-color);
-    height: 100vh;
+    height: 100%;
 }
 
 .navigation {

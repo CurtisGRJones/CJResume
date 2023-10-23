@@ -14,6 +14,12 @@ export const Layout = () => {
     window.addEventListener('resize', () => {
       setPermNav(window.innerWidth >= 750)
     })
+    window.addEventListener('scroll', () => {
+      console.log(`.${styles['top-bar']}`);
+      (document.querySelector(`.${styles['top-bar']}`) as HTMLElement).style.top = `-${document.documentElement.scrollTop}px`;
+      //document.documentElement.style.setProperty('--scroll-position-x',`${document.documentElement.scrollLeft} px`);
+      console.log('scroll: ', `${document.documentElement.scrollTop} px`);
+    })
   }, [])
 
   const handleShowPress = () => {

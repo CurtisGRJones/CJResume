@@ -28,7 +28,7 @@ export const Resume = () => {
                 setResumeData(resume)
             }),
             new Promise(r => setTimeout(r, 1000))
-        ]).then( () => {
+        ]).then(() => {
             setLoading(false)
         })
     }, [])
@@ -53,7 +53,7 @@ export const Resume = () => {
         points: string[]
     }[]) => {
 
-        return ( list.map((item) => (
+        return (list.map((item) => (
             <div className={styles['multi']}>
                 <h3>{item.title}</h3>
                 <Grid container
@@ -69,54 +69,56 @@ export const Resume = () => {
                 </Grid>
                 {buildUl(item.points)}
             </div>
-        )) )
+        )))
     }
 
     return (
         <div className={styles['resume']}>
-            {loading && <Spinner /> /* TODO find out iof this is needed */}
-            <h1> Curtis Jones </h1>
-            <p className={styles['address']}> {resumeData.address}</p>
-            <Grid container
-                justifyContent="flex-end"
-                alignItems="center"
-            >
-                <Grid item xs={6} className={styles['left-align']}>
-                    <p className={styles['phone-number']}> {resumeData.phoneNumber} </p>
+            <div className={styles['resume-content']}>
+                {loading && <Spinner /> /* TODO find out iof this is needed */}
+                <h1> Curtis Jones </h1>
+                <p className={styles['address']}> {resumeData.address}</p>
+                <Grid container
+                    justifyContent="flex-end"
+                    alignItems="center"
+                >
+                    <Grid item xs={6} className={styles['left-align']}>
+                        <p className={styles['phone-number']}> {resumeData.phoneNumber} </p>
+                    </Grid>
+                    <Grid item xs={6} className={styles['right-align']}>
+                        <a className={styles['email']} href={`mailto:${resumeData.email}`}> {resumeData.email} </a>
+                    </Grid>
                 </Grid>
-                <Grid item xs={6} className={styles['right-align']}>
-                    <a className={styles['email']} href={`mailto:${resumeData.email}`}> {resumeData.email} </a>
-                </Grid>
-            </Grid>
 
-            <div className={styles['line']} />
+                <div className={styles['line']} />
 
-            <h2> Profesional Summary </h2>
-            <div className={styles['left-align']}>
-                {buildUl(resumeData.profesionalSummary)}
+                <h2> Profesional Summary </h2>
+                <div className={styles['left-align']}>
+                    {buildUl(resumeData.profesionalSummary)}
+                </div>
+
+                <div className={styles['line']} />
+
+                <h2> Work Experiance </h2>
+                <div className={styles['left-align']}>
+                    {buildMulti(resumeData.workExperiance)}
+                </div>
+
+                <div className={styles['line']} />
+
+                <h2> Education </h2>
+                <div className={styles['left-align']}>
+                    {buildMulti(resumeData.education)}
+                </div>
+
+                <div className={styles['line']} />
+
+                <h2> Projects </h2>
+                <div className={styles['left-align']}>
+                    {buildUl(resumeData.projects)}
+                </div>
+                <p> References Available Upon Request </p>
             </div>
-
-            <div className={styles['line']} />
-
-            <h2> Work Experiance </h2>
-            <div className={styles['left-align']}>
-                {buildMulti(resumeData.workExperiance)}
-            </div>
-
-            <div className={styles['line']} />
-
-            <h2> Education </h2>
-            <div className={styles['left-align']}>
-                {buildMulti(resumeData.education)}
-            </div>
-
-            <div className={styles['line']} />
-
-            <h2> Projects </h2>
-            <div className={styles['left-align']}>
-                {buildUl(resumeData.projects)}
-            </div>
-            <p> References Available Upon Request </p>
         </div>
     );
 }

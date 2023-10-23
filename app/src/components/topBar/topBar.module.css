@@ -2,8 +2,8 @@
     position: relative;
     top: 0;
     background-color: var(--secondary-background-color);
-    min-height: var(--topbar-height);
-    max-width: 100%;
+    height: var(--topbar-height);
+    width: 100%;
 
     .my-name {
         font-size: 30px;
@@ -25,7 +25,7 @@
     }
 }
 
-@media all and (min-width: 510px) {
+@media all and (min-width: 520px) {
     .top-bar{
         display: flex;
         justify-content: space-between;
@@ -41,7 +41,7 @@
     }
 }
 
-@media all and (max-width: 510px) {
+@media all and (max-width: 520px) {
     .top-bar{
         display: block;
     }

@@ -1,13 +1,21 @@
-.resume {
+:root {
     --width: 1000px;
+}
+
+.resume {
     position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     width: var(--width);
-    min-height: calc(100% - 2rem);
+    min-width: var(--width);
+    padding: 1rem;
+}
+
+.resume-content {
+    width: calc(var(--width) - 2rem);
     background-color: var(--tertiary-background-color);
     text-align: center;
-    margin: 1rem;
     padding: 1rem;
-    left: calc(50% - var(--width) / 2);
 }
 
 .line {
