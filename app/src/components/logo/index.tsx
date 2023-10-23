@@ -15,6 +15,6 @@ export const Logo = ({
         height = width * (defaultHeight / defaultWidth)
     }
     return (
-        <img src={process.env.PUBLIC_URL + '/icons/logo.png'} alt='logo' width={String(width)} height={String(height)} />
+        <img src={(process.env.REACT_APP_PUBLIC_URL || '/public') + '/icons/logo.png'} alt='logo' width={String(width)} height={String(height)} />
     )
 };
