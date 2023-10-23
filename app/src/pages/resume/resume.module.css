@@ -40,8 +40,14 @@
     text-align: right;
 }
 
-@media all and (max-width: 700px) {
+@media all and (min-width: 400px) and (max-width: 700px) {
     .resume-content {
         font-size: 0.75rem;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .resume-content {
+        font-size: 0.6rem;
     }
 }

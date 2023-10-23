@@ -75,17 +75,18 @@ export const Resume = () => {
     return (
         <div className={styles['resume']}>
             <div className={styles['resume-content']}>
-                {loading && <Spinner /> /* TODO find out iof this is needed */}
+                {loading && <Spinner /> /* TODO find out if this is needed */}
                 <h1> Curtis Jones </h1>
                 <p className={styles['address']}> {resumeData.address}</p>
                 <Grid container
                     justifyContent="flex-end"
                     alignItems="center"
                 >
-                    <Grid item xs={6} className={styles['left-align']}>
+                    { /* TODO make this top/botom if screen is too small ~370 px */ }
+                    <Grid item xs={5} className={styles['left-align']}>
                         <p className={styles['phone-number']}> {resumeData.phoneNumber} </p>
                     </Grid>
-                    <Grid item xs={6} className={styles['right-align']}>
+                    <Grid item xs={7} className={styles['right-align']}>
                         <a className={styles['email']} href={`mailto:${resumeData.email}`}> {resumeData.email} </a>
                     </Grid>
                 </Grid>
