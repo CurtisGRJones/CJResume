@@ -62,6 +62,7 @@ $ cjweb deploy
 ## Change Log
 
 ### October 22nd 2023
+- Improved mobile rendering
 - Added navbar conditional rendering
 - Fixed 502 when going to pages other than index
 - Improved scaling with page sizes
