@@ -13,10 +13,10 @@ case $1 in
         ${SCRIPTS_DIR}/docker-build.sh;
         ;;
     docker-push)
-        ${SCRIPTS_DIR}/docker-publish.sh;
+        ${SCRIPTS_DIR}/docker-push.sh;
         ;;
-    docker-run)
-        ${SCRIPTS_DIR}/docker-run.sh;
+    dev-docker)
+        ${SCRIPTS_DIR}/dev-docker.sh;
         ;;
     dev-start)
         ${SCRIPTS_DIR}/dev-start.sh;

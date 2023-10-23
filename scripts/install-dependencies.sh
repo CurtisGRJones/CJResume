@@ -51,7 +51,7 @@ fi
 echo "Node installed with version" $(node -v);
 
 echo "Installing node packages for app"
-(cd ./app && yarn install --frozen-lockfile);
+(cd ${PROJECT_DIR}/app && yarn install --frozen-lockfile);
 
 echo "Installing node packages for api"
-(cd ./api && yarn install --frozen-lockfile);
+(cd ${PROJECT_DIR}/api && yarn install --frozen-lockfile);

@@ -75,8 +75,8 @@ module.exports = () => {
                         to: './public'
                     }]
             }),
-            new webpack.DefinePlugin({
-                'process.env.PUBLIC_URL': "'/public'"
+            new webpack.ProvidePlugin({
+                process: 'process/browser',
             }),
         ]
     }

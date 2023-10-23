@@ -47,7 +47,7 @@ $ cjweb deploy
 ### Bug Log
 - CSS is causing undesired style on firefox
 - webkit-scrollbar is still being publically implemented from caculator
-- Calculator not verically centered
+- Calculator not verically centered on production 
 - Content not verically cented in content div
 - Copywright popping out when nav bar comes out
 
