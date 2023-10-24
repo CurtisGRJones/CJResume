@@ -15,10 +15,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.25'
+          cpus: '0.1'
           memory: 50M
         reservations:
-          cpus: '0.1'
+          cpus: '0.05'
           memory: 20M
 
   app:
@@ -31,10 +31,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.25'
+          cpus: '0.1'
           memory: 100M
         reservations:
-          cpus: '0.1'
+          cpus: '0.01'
           memory: 20M
 
   nginx:

@@ -58,6 +58,7 @@ $ cjweb deploy
 - Add ESLint file
 - Use secrets manager to serve env variables
 - Implement TLS cert to allow for HTTPS
+- Fix error handing causing some webpages not to load
 
 ## Change Log
 
