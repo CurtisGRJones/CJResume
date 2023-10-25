@@ -1,13 +1,14 @@
-import { DataTypes } from "sequelize";
-import { Definition } from "./types";
+const { DataTypes } = require('sequelize')
 
-const user: Definition = {
+// TODO make this paranoid
+
+const user = {
     name: 'user',
     fields: {
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
-            allowNull: false,
+            // allowNull: false,
             primaryKey: true
         },
         createdOn: {
@@ -16,11 +17,11 @@ const user: Definition = {
         },
     },
     associations: [
-        {
-            modelName: 'hits',
-            relationship: 'hasMany'
-        }
+        //{
+            //modelName: 'hits',
+            //relationship: 'hasMany'
+        //}
     ]
 }
 
-export default user
+module.exports = user

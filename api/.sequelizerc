@@ -1,0 +1,16 @@
+'use strict';
+
+require('dotenv').config(); 
+const path = require('path');
+
+const dbPath = path.resolve('src', 'controlers', 'dbControler', 'sequilize')
+
+console.log(path.resolve(dbPath, 'models'))
+
+module.exports = {
+  'config': path.join(dbPath, 'config', 'config.js'),
+  // api/src/controlers/dbControler/sequilize/models
+  'models-path': path.resolve(dbPath, 'models'),
+  'seeders-path': path.resolve(dbPath, 'seeders'),
+  'migrations-path': path.resolve(dbPath, 'migrations'),
+};

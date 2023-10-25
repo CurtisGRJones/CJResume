@@ -1,5 +1,8 @@
 import { BelongsToManyOptions, HasOneOptions, BelongsToOptions, HasManyOptions, ModelAttributes } from "sequelize";
 
+// KEPT FOR REFERNCE
+// todo remove this
+
 interface BTMAccociation {
     relationship: "belongsToMany"
     modelName: string,

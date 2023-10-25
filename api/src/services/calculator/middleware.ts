@@ -1,5 +1,5 @@
 import express from 'express';
-import { add, divide, multiply, subtract } from "./endpoints"
+import { add, divide, multiply, subtract } from "./routes"
 
 const router = express.Router();
 

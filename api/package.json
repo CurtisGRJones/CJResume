@@ -8,7 +8,9 @@
     "start": "node ./dist/index.js",
     "watch": "npx tsc --watch",
     "start-nodemon": "nodemon -q dist/index.js",
-    "dev": "concurrently -n watch,api \"yarn watch\" \"yarn start-nodemon\""
+    "dev": "concurrently -n watch,api \"yarn watch\" \"yarn start-nodemon\"",
+    "make-migrations": "makemigration",
+    "migrate": "sequelize-cli db:migrate"
   },
   "dependencies": {
     "@types/mongodb": "^4.0.7",
@@ -16,7 +18,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "mongodb": "^6.1.0"
+    "mongodb": "^6.1.0",
+    "mysql2": "^3.6.2",
+    "sequelize": "^6.33.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.14",
@@ -27,6 +31,8 @@
     "dotenv-webpack": "^8.0.1",
     "eslint": "^8.51.0",
     "nodemon": "^3.0.1",
+    "sequelize-auto-migrations": "^1.0.3",
+    "sequelize-cli": "^6.6.1",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",

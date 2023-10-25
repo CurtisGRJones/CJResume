@@ -1,9 +1,5 @@
-import { DbConnection } from "./connection";
-import models from './models'
-
+import models from './sequilize/models'
 class DbControler {
-    connection = DbConnection
-
     getModles = () => {
         return models
     }

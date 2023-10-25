@@ -1,13 +1,12 @@
-import { DataTypes } from "sequelize";
-import { Definition } from "./types";
+const { DataTypes } = require('sequelize')
 
-const hits: Definition =  {
+const hits =  {
     name: 'hits',
     fields: {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
-            allowNull: false,
+            // allowNull: false,
             primaryKey: true
         },
         path: {
@@ -18,18 +17,18 @@ const hits: Definition =  {
             type: DataTypes.DATE,
             allowNull: false
         },
-        user: {
-            type: DataTypes.STRING,
-            allowNull: true,
-
-        },
     },
     associations: [
         {
-            modelName: '',
+            modelName: 'user',
             relationship: 'belongsTo',
+            options: {
+                key: 'id',
+                as: 'userId',
+                onDelete: 'SET NULL',
+            }
         }
     ]
 }
 
-export default hits
+module.exports = hits
