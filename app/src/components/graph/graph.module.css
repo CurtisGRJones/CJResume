@@ -1,7 +1,7 @@
 .line-chart {
     width: 100%;
 
-    [class*="MuiResponsiveChart-container"] {
+    :global(.css-1sunrpn-MuiResponsiveChart-container) {
         width: 100%;
         height:fit-content;
         background-color: var(--secondary-background-color);

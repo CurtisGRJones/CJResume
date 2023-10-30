@@ -19,6 +19,7 @@ export const Graph = ({
   return (
     <div className={styles['line-chart']}>
       <LineChart
+        className='test-graph'
         xAxis={[{ data: xAxis }]}
         series={[
           {
