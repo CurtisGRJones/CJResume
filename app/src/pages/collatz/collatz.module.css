@@ -19,7 +19,7 @@
 
     .left {
         position: absolute;
-        top: 50%;
+        top: 29px;
         transform: translateY(-50%);
         left: 0;
         padding: 0;

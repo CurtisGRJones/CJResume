@@ -47,7 +47,7 @@ export const Collatz = () => {
         <div className={styles['collatz']}>
             <div className={styles['content']}>
                 <div className={styles['title']}>
-                    <h3> 3x + 1 AKA Collatz Congecture </h3>
+                    <h3> [WIP] 3x + 1 AKA Collatz Congecture </h3>
                 </div>
                 <div className={styles['description']}>
                     <p> The 3x + 1 problem, also known as the Collatz Conjecture is a commonly known unsolved math conjecture named after Lothar Collatz in 1973.
