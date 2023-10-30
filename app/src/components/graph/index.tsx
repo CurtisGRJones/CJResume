@@ -16,17 +16,15 @@ export const Graph = ({
     yAxis.push(y)
   });
 
-  console.log(xAxis)
-  console.log(yAxis)
-
   return (
     <LineChart
-      
       xAxis={[{ data: xAxis }]}
       series={[
         {
           data: yAxis,
-          color: 'var(--primary-text-color)'
+          color: 'var(--primary-text-color)',
+          curve: 'linear',
+          showMark: false
         },
       ]}
       width={500}

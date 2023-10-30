@@ -4,6 +4,7 @@ import styles from './collatz.module.css'
 
 export const Collatz = () => {
     const defaultValue = 7
+    const maxIttr = 1000
     const [data, setData] = useState<graphData>([])
 
     const calculate = (num: number): graphData => {
@@ -13,7 +14,7 @@ export const Collatz = () => {
         }]
         // TODO optomize this better
         let ittr = 1
-        while (num !== 1 && ittr <= 1000) {
+        while (num !== 1 && ittr <= maxIttr) {
             const div2 = num / 2
 
             if (Number.isInteger(div2)) {
@@ -49,7 +50,16 @@ export const Collatz = () => {
                     <h3> 3x + 1 AKA Collatz Congecture </h3>
                 </div>
                 <div className={styles['description']}>
-                    <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra vulputate aliquam. Praesent fringilla pulvinar facilisis. Vivamus vel eros sit amet augue maximus posuere. Vivamus libero velit, malesuada a sem eu, ultricies pharetra justo. Duis tincidunt tincidunt dui, vitae viverra orci condimentum sed. Integer ipsum felis, auctor vitae rutrum vitae, euismod quis sapien. Mauris sed nulla convallis, facilisis orci vel, pulvinar nunc. Praesent urna sem, eleifend id mauris sed, varius vulputate mauris. Mauris id leo felis. Phasellus augue diam, facilisis non commodo ut, sodales venenatis mauris. Cras a mattis nisl, eget posuere metus. Integer non dapibus lorem. Nam vestibulum maximus mattis. </p>
+                    <p> The 3x + 1 problem, also known as the Collatz Conjecture is a commonly known unsolved math conjecture named after Lothar Collatz in 1973.
+                        The conjecture states that any number when run through the following series will resolve to a 4, 2, 1 loop. </p>
+                    <p> Equation:</p>
+                    <div className={styles['equation']}>
+                        <p className={styles['left']}> x<sub>n</sub> = </p>
+                        <p className={styles['bracket']}>{'{'}</p>
+                        <pre className={styles['top']}>x<sub>n-1</sub>/2      for x<sub>n-1</sub> even</pre>
+                        <pre className={styles['bot']}>3x<sub>n-1</sub> + 1   for x<sub>n-1</sub> odd </pre>
+                    </div>
+                    <p> Input a number below and see the 3x + 1 series on the graph </p>
                 </div>
                 <div className={styles['input']}>
                     <input type='number' defaultValue={defaultValue} onChange={onChange} />
@@ -60,9 +70,9 @@ export const Collatz = () => {
                     <>
                         <Graph data={data} />
                         {data[data.length-1].y !== 1 ?
-                            // TODO allow them to use the API to solve for over 100
-                            <p> Not all data shown as it did not resolve to 1 in 100 itterations </p> : 
-                            <p> Sequence resolved in {data.length} itterations </p>
+                            // TODO allow them to use the API to solve for over maxIttr
+                            <p> Not all data shown as it did not resolve to 1 in {maxIttr} itterations </p> : 
+                            <p> Sequence resolved in {data.length - 1} itterations </p>
                         }
                     </>
                 )}
