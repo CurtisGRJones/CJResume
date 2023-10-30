@@ -2,7 +2,7 @@ import { useEffect, useState, createContext } from 'react';
 import { ConfigControler } from './controlers/ConfigControler';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout, Spinner } from './components';
-import { Home, Page404, Calculator, Contact, Resume } from './pages';
+import { Home, Page404, Calculator, Contact, Resume, Collatz } from './pages';
 // import '@fontsource/roboto/300.css';
 // import '@fontsource/roboto/400.css';
 // import '@fontsource/roboto/500.css';
@@ -44,6 +44,7 @@ function App() {
             <Route path='/spinner' element={<Spinner />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/resume' element={<Resume />} />
+            <Route path='/collatz' element={<Collatz />} />
             <Route path="*" element={<Page404 />} />
           </Route>
         </Routes>

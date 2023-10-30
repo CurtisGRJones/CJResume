@@ -1,0 +1,19 @@
+.line-chart {
+    width: 100%;
+
+    /* TODO find why this is different on prod and dev */
+    :global(.css-1sunrpn-MuiResponsiveChart-container), :global(.css-1mhd4ku) {
+        width: 100%;
+        height:fit-content;
+        background-color: var(--secondary-background-color);
+    }
+
+    :global(.MuiChartsAxis-tickLabel) {
+        font-family: 'Audiowide' !important;
+        fill: var(--primary-text-color) !important;
+    }
+
+    :global(.MuiChartsAxis-tick), :global(.MuiChartsAxis-line) {
+        stroke: var(--primary-text-color) !important;
+    }
+}
