@@ -1,13 +1,13 @@
 import { LineChart } from '@mui/x-charts';
 import styles from './graph.module.css'
 
-interface params {
+interface PropsType {
   data: graphData
 }
 
 export const Graph = ({
   data
-}: params) => {
+}: PropsType) => {
   const xAxis: Array<number> = []
   const yAxis: Array<number> = []
 
@@ -17,21 +17,20 @@ export const Graph = ({
   });
 
   return (
-    <LineChart
-      xAxis={[{ data: xAxis }]}
-      series={[
-        {
-          data: yAxis,
-          color: 'var(--primary-text-color)',
-          curve: 'linear',
-          showMark: false
-        },
-      ]}
-      width={500}
-      height={300}
-      sx={{
-        backgroundColor: 'var(--secondary-background-color)',
-      }}
-    />
+    <div className={styles['line-chart']}>
+      <LineChart
+        xAxis={[{ data: xAxis }]}
+        series={[
+          {
+            data: yAxis,
+            color: 'var(--tertiary-text-color)',
+            curve: 'linear',
+            showMark: false
+          },
+        ]}
+        width={500}
+        height={250}
+      />
+    </div>
   )
 };

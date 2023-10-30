@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react'
-import { Graph } from '../../components'
+import { Graph, Input } from '../../components'
 import styles from './collatz.module.css'
 
 export const Collatz = () => {
@@ -47,7 +47,7 @@ export const Collatz = () => {
         <div className={styles['collatz']}>
             <div className={styles['content']}>
                 <div className={styles['title']}>
-                    <h3> [WIP] 3x + 1 AKA Collatz Congecture </h3>
+                    <h3> 3x + 1 AKA Collatz Congecture </h3>
                 </div>
                 <div className={styles['description']}>
                     <p> The 3x + 1 problem, also known as the Collatz Conjecture is a commonly known unsolved math conjecture named after Lothar Collatz in 1973.
@@ -56,13 +56,13 @@ export const Collatz = () => {
                     <div className={styles['equation']}>
                         <p className={styles['left']}> x<sub>n</sub> = </p>
                         <p className={styles['bracket']}>{'{'}</p>
-                        <pre className={styles['top']}>x<sub>n-1</sub>/2      for x<sub>n-1</sub> even</pre>
-                        <pre className={styles['bot']}>3x<sub>n-1</sub> + 1   for x<sub>n-1</sub> odd </pre>
+                        <p className={styles['top']}>x<sub>n-1</sub>/2 <p className={styles['for']}>for x<sub>n-1</sub> even</p></p>
+                        <p className={styles['bot']}>3x<sub>n-1</sub> + 1 <p className={styles['for']}>for x<sub>n-1</sub> odd </p></p>
                     </div>
                     <p> Input a number below and see the 3x + 1 series on the graph </p>
                 </div>
                 <div className={styles['input']}>
-                    <input type='number' defaultValue={defaultValue} onChange={onChange} />
+                    <Input type='number' defaultValue={defaultValue} onChange={onChange} />
                 </div>
             </div>
             <div className={styles['graph']}>

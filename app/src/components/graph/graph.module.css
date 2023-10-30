@@ -1,0 +1,18 @@
+.line-chart {
+    width: 100%;
+
+    [class*="MuiResponsiveChart-container"] {
+        width: 100%;
+        height:fit-content;
+        background-color: var(--secondary-background-color);
+    }
+
+    :global(.MuiChartsAxis-tickLabel) {
+        font-family: 'Audiowide' !important;
+        fill: var(--primary-text-color) !important;
+    }
+
+    :global(.MuiChartsAxis-tick), :global(.MuiChartsAxis-line) {
+        stroke: var(--primary-text-color) !important;
+    }
+}

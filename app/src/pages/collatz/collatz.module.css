@@ -1,14 +1,11 @@
 .content {
     position: relative;
-    width: 40%;
     padding: 3rem;
-    height: 100%;
 }
 
 .graph {
     position: relative;
     width: 60%;
-    height: 100%;
     padding:3rem;
 }
 
@@ -16,10 +13,11 @@
     position: relative;
     height: 50px;
     margin-bottom: 1rem;
+    white-space: nowrap;
 
     .left {
         position: absolute;
-        top: 29px;
+        top: 27px;
         transform: translateY(-50%);
         left: 0;
         padding: 0;
@@ -39,7 +37,7 @@
 
     .top {
         position: absolute;
-        left: 100px;
+        left: 80px;
         top: 0;
         padding: 0;
         margin: 0;
@@ -48,11 +46,21 @@
 
     .bot {
         position: absolute;
-        left: 100px;
+        left: 80px;
         bottom: 0;
         padding: 0;
         margin: 0;
         font-family: 'Audiowide';
+    }
+
+    .for {
+        position: absolute;
+        width: fit-content;
+        top: inherit;
+        bottom: inherit;
+        left: 80px;
+        padding: 0;
+        margin: 0;
     }
 }
 
@@ -64,10 +72,22 @@
         display: flex;
         align-items: center;
     }
+    .content {
+        width: 40%;
+    }
+    .graph {
+        width: 60%;
+    }
 }
 
 @media all and (max-width: 1000px) {
     .collatz {
         display: block;
+    }
+    .content {
+        width: calc(100% - 6rem);
+    }
+    .graph {
+        width: calc(100% - 6rem);
     }
 }
