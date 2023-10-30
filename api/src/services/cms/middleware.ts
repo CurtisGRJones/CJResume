@@ -1,6 +1,6 @@
 import express from 'express';
 import { CmsControler } from '../../controlers';
-import { resume, seedData } from './endpoints';
+import { resume, seedData } from './routes';
 
 const router = express.Router();
 

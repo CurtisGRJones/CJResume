@@ -1,5 +1,5 @@
 import express from 'express';
-import { getConfig } from "./endpoints"
+import { getConfig } from "./routes"
 
 const router = express.Router();
 

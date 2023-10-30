@@ -4,6 +4,8 @@ import { Services } from './services';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
+// TODO add termination signals and shut down appropriately
+
 try {
   const app: Express = express();
   app.use(bodyParser.json());
