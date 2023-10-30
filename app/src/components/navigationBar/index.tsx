@@ -12,7 +12,7 @@ export const NavigationBar = () => {
                 <AnchorButton textContent='HOME' href='/' />
                 <AnchorButton textContent='RESUME' href='/resume' />
                 <AnchorButton textContent='CALCULATOR' href='/calculator' />
-                { /*<AnchorButton textContent='ADCSIM' href='/adcSim' /> */}
+                <AnchorButton textContent='3x + 1' href='/collatz' />
             </div>
             <div className={styles['copywright']}>
                 <p> &copy; Curtis Jones 2023 </p>
