@@ -14,6 +14,7 @@ export const Home = () => {
         'HTML',
         'CSS',
         'Git',
+        'SSL'
     ]
     return (
         <div className={styles['home']}>

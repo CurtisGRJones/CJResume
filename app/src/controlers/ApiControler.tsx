@@ -7,7 +7,7 @@ export class ApiControler {
         if (!ApiControler.instance) {
             const apiHost = 
                 process.env.REACT_APP_API_HOST ||
-                'http://www.cjresume.ca'
+                'https://cjresume.ca'
             ApiControler.instance = axios.create({
                 baseURL: `${apiHost}/api/`,
                 timeout: 1000,
