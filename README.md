@@ -1,4 +1,4 @@
-# [CJResume.ca](https://www.cjresume.ca)
+# [CJResume.ca](https://cjresume.ca)
 
 ## Dependencies & Technologies Used
 - Node16.20
